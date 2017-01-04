@@ -1430,6 +1430,14 @@ p {
     border-radius: 1.5em;
     color: #484848
 }
+#page-location .page-content {
+    max-width: 800px;
+    font-size: 1.1em;
+    padding: 5em;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 1.5em;
+    color: #484848
+}
 @media screen and (max-width: 1000px) {
     #page-home .page-content {
         padding: 2em
@@ -1542,8 +1550,11 @@ p {
     }
 }
 #guide-arrow {
+/*
     position: relative;
     left: 50%;
+*/
+/*    background: url(image/arrow.png) no-repeat center center;*/
     height: 3em;
     -webkit-transform: translate(-50%, 50%);
     -ms-transform: translate(-50%, 50%);
@@ -1751,9 +1762,12 @@ p {
     opacity: .5
 }
 .conf-time-table td.time .stime {
+  width: 10px;
+/*
     position: absolute;
     top: 0;
-    left: 0
+    left: 0;
+*/
 }
 .conf-time-table td.time .etime {
     position: absolute;
