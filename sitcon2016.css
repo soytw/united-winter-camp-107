@@ -1,4 +1,9 @@
+@font-face {
+    font-family: 'Bang';
+    src: url(fonts/bang.ttf) format(ttf);
+}
 @import url(https://fonts.googleapis.com/css?family=Varela+Round);
+
 * {
     margin: 0;
     padding: 0;
@@ -321,9 +326,10 @@ h1,
 }
 #footer {
     background-color: #41a2c9;
-    margin-top: 12em;
+/*    margin-top: 12em;*/
     padding: 8em 0 4em 0
 }
+/*
 #staffs {
     width: 80%;
     max-width: 1000px;
@@ -380,6 +386,7 @@ h1,
     font-size: .95em;
     text-align: center
 }
+*/
 #footer-sponsor {
     width: 80%;
     max-width: 1000px;
@@ -414,7 +421,8 @@ h1,
 }
 #footer-sponsor .row .col-left {
     width: 50%;
-    float: left
+    float: left;
+    position: relative;
 }
 #footer-sponsor .row .col-right {
     width: 49%;
@@ -428,12 +436,16 @@ h1,
 	display: block;
     width: 300px;
     height: 300px;
-    background-color: rgba(255, 255, 255, 0.6);
-    margin: 0 auto 1em auto;
+/*    background-color: rgba(255, 255, 255, 0.6);*/
+    margin: 5% auto 0 auto;
     border-radius: 3px;
     -webkit-transition: background-color 1000ms cubic-bezier(0.17, 0.84, 0.44, 1);
     transition: background-color 1000ms cubic-bezier(0.17, 0.84, 0.44, 1);
+  
+    /* align center */
 	vertical-align: middle;
+    line-height: 250px;
+    font-size: 180px;
 }
 #footer-sponsor .row .sponsor .logo.hover:hover {
     cursor: pointer;
@@ -489,7 +501,7 @@ h1,
 .sky {
     position: relative;
     width: 100%;
-    height: 900px
+    height: 900px;
 }
 @media screen and (max-width: 1700px) {
     .sky {
@@ -575,12 +587,12 @@ h1,
 }
 @media screen and (max-width: 1000px) {
     #cover-cloud {
-        height: 500px
+        height: 600px
     }
 }
 @media screen and (max-width: 700px) {
     #cover-cloud {
-        height: 400px
+        height: 500px
     }
 }
 @media screen and (max-width: 500px) {
@@ -894,7 +906,7 @@ h1,
 }
 #image-group-title {
     position: absolute;
-    top: 12%;
+    top: 20%;
     left: 50%;
     width: 100%;
     -webkit-transform: translateX(-50%);
@@ -906,7 +918,7 @@ h1,
 }
 @media screen and (max-width: 500px) {
     #image-group-title {
-        top: 15%;
+        top: 30%;
         width: 110%
     }
 }
@@ -928,10 +940,10 @@ h1,
 }
 #image-group-title .text-date {
     margin-top: 1.2em;
-    font-size: 1.3em;
+    font-size: 2em;
     font-weight: 600;
     color: #5f5f5f;
-    text-align: center
+    text-align: center;
 }
 @media screen and (max-width: 1600px) {
     #image-group-title .text-date {
@@ -1434,7 +1446,7 @@ p {
     max-width: 800px;
     font-size: 1.1em;
     padding: 5em;
-    background-color: rgba(255, 255, 255, 0.5);
+/*    background-color: rgba(255, 255, 255, 0.5);*/
     border-radius: 1.5em;
     color: #484848
 }
@@ -1519,30 +1531,43 @@ p {
     display: block;
     clear: both
 }
-#group-events .col {
-    width: 33.33333%;
-    vertical-align: top;
-    float: left
+.event-container .col {
+/*    margin-right: 1em;*/
+    width: 50%;
+    float: left;
 }
-#group-events .event-container {
+.event-container {
     width: 90%;
-    padding: 1em 0;
-    margin: 0 auto 1em auto;
+/*    padding: 1em 0;*/
+/*    margin: 0 auto 1em auto;*/
     border-radius: 3px;
-    cursor: pointer;
-    background-color: rgba(255, 255, 255, 0.5)
+/*    cursor: pointer;*/
+/*    background-color: rgba(255, 255, 255, 0.5);*/
 }
-#group-events .event-container h2 {
-    text-align: center;
+.event-container img {
+    max-width: 100%;
+    max-height: 100%;
+}
+.event-container h2 {
+/*    color*/
+    text-align: right;
     margin-bottom: .2em;
-    font-weight: 300
+    font-weight: bold;
+    padding-right: 10px;
 }
-#group-events .event-container p {
+.event-container h3 {
+    text-align: right;
+    margin-bottom: .2em;
+    font-weight: normal;
+    padding-right: 10px;
+}
+.event-container p {
     padding: 0 .8em;
     font-size: 1em
 }
 #conf-guide-block {
-    margin-top: 6em
+    margin-top: 6em;
+    color: #eb6b7f;
 }
 @media screen and (max-width: 1000px) {
     #conf-guide-block {
@@ -2302,4 +2327,64 @@ a.briefing-link:hover {
 }
 #location-map.open {
     width: 100%
+}
+
+
+
+
+
+
+#group-events .col-left {
+/*
+    width: 33.33%;
+    float: left;
+*/
+}
+
+
+
+#group-events .img {
+    width: 300px;
+    height: 300px;
+}
+
+
+
+
+
+h1.title {
+    text-align: center;
+    font-weight: bold;
+    line-height: 2em;
+    padding-bottom: 0.5em;
+    color: brown;
+}
+
+#emails .col {
+    background: rgb(255,255,255,0.5);
+    width: 50%;
+    float: left;
+    position: relative;
+    left: -50%;
+    text-align: center;
+}
+
+#emails {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    width: 60%;
+    min-width: 530px;
+}
+
+#emails p {
+    text-align: center;
+}
+
+#staff .col {
+    width: 50%;
+    float: left;
+}
+
+#staff {
 }
