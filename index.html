@@ -1,567 +1,129 @@
 <!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>學生計算機年會 | Students' Information Technology Conference</title>
-
-  <meta name="description" content="以學生為本、由學生自發舉辦，SITCON 學生計算機年會不只是學生「學以致用、教學相長」的實際展現，更冀望所有對資訊有興趣的學生，能夠在年會裏齊聚一堂，彼此激盪、傳承、啟發。">
-
-  <meta property="og:title" content="學生計算機年會">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="http://sitcon.org/2016/">
-  <meta property="og:image" content="http://sitcon.org/2016/image/sitcon2016-snapshot.png">
-  <meta property="og:site_name" content="學生計算機年會">
-  <meta property="og:description" content="以學生為本、由學生自發舉辦，SITCON 學生計算機年會不只是學生「學以致用、教學相長」的實際展現，更冀望所有對資訊有興趣的學生，能夠在年會裏齊聚一堂，彼此激盪、傳承、啟發。">
-
-  <meta property="twitter:title" content="學生計算機年會">
-  <meta property="twitter:description" content="以學生為本、由學生自發舉辦，SITCON 學生計算機年會不只是學生「學以致用、教學相長」的實際展現，更冀望所有對資訊有興趣的學生，能夠在年會裏齊聚一堂，彼此激盪、傳承、啟發。">
-  <meta property="twitter:image:src" content="http://sitcon.org/2016/image/sitcon2016-snapshot.png">
-  <meta property="twitter:image:width" content="470">
-  <meta property="twitter:image:height" content="275">
-
-  <link href="favicon.ico" rel="shortcut icon">
-  <link href="favicon.ico" rel="icon">
-
-  <script src="http://openlayers.org/en/v3.12.1/build/ol.js" type="text/javascript"></script>
-  <link rel="stylesheet" href="http://openlayers.org/en/v3.12.1/css/ol.css" type="text/css">
-
-  <style type="text/css">
-    #loading-page {
-      display: block;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #C2E9FF;
-      z-index: 1000;
-    }
-  </style>
-
-</head>
-
-<body>
-  <!-- DEBUG: live reload -->
-<!--  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>-->
-
-  <div id="loading-page"></div>
-  <div id="fancybox">
-    <div id="fancybox-bg"></div>
-    <div id="fancybox-forward1"></div>
-    <div id="fancybox-forward2"></div>
-    <div id="fancybox-container">
-      <div class="xx"></div>
-      <div class="content"></div>
-    </div>
-  </div>
-
-  <div id="blur-area">
-
-    <div id="navbar">
-      <div class="nav">
-        <a id="link-home" href="#target-home">首頁</a>
-      </div>
-      <div class="nav">
-        <a id="link-schedule" href="#target-schedule">行程</a>
-      </div>
-      <div class="nav">
-        <a id="link-sponsor" href="#target-sponsor">贊助</a>
-      </div>
-      <div class="nav">
-        <a id="link-location" href="#target-location">聯絡我們</a>
-      </div>
-    </div>
-
-    <div id="h-controller">
-      <div id="target-home" class="targetor"></div>
-      <div id="target-schedule" class="targetor"></div>
-      <div id="target-sponsor" class="targetor"></div>
-      <div id="target-location" class="targetor"></div>
-
-      <div id="cover-fix">
-        <img id="image-sun" src="image/sun.png">
-
-        <img id="image-bird1" src="image/bird.png">
-        <img id="image-bird2" src="image/bird.png">
-        <img id="image-bird3" src="image/bird.png">
-
-      </div>
-      <div id="cover-cloud">
-        <img id="image-mountain" src="image/mountain.png">
-
-        <img src="image/cloud.png" class="cloud small" id="cloud1">
-        <img src="image/cloud.png" class="cloud small" id="cloud1_2">
-        <img src="image/cloud.png" class="cloud small opacity" id="cloud2">
-        <img src="image/cloud.png" class="cloud small opacity" id="cloud2_2">
-        <img src="image/cloud.png" class="cloud big" id="cloud3">
-        <img src="image/cloud.png" class="cloud big" id="cloud3_2">
-        <img src="image/cloud.png" class="cloud middle" id="cloud4">
-        <img src="image/cloud.png" class="cloud middle" id="cloud4_2">
-        <img src="image/cloud.png" class="cloud small" id="cloud5">
-        <img src="image/cloud.png" class="cloud small" id="cloud5_2">
-        <img src="image/cloud.png" class="cloud small" id="cloud6">
-        <img src="image/cloud.png" class="cloud small" id="cloud6_2">
-
-      </div>
-
-      <div id="x-controller">
-        <div id="page-home" class="page-container">
-          <div class="sky">
-            <div class="grass"></div>
-            <img class="image-grass image-grass1" src="image/grass.png">
-            <img class="image-grass image-grass2" src="image/grass.png">
-            <div id="image-group-leftground">
-              <img class="image-bridge" src="image/bridge.png">
-              <img id="image-tree3" class="image-tree" src="image/tree.png">
-              <img id="image-tree2" class="image-tree" src="image/tree.png">
-              <img id="image-tree1" class="image-tree" src="image/tree.png">
-            </div>
-            <img id="image-tree4" class="image-tree" src="image/tree.png">
-            <img id="image-tree6" class="image-tree" src="image/tree.png">
-            <img id="image-tree5" class="image-tree" src="image/tree.png">
-            <img id="image-tree7" class="image-tree" src="image/tree.png">
-
-            <div id="image-group-title">
-<!--
-              <img id="image-character-blue" src="image/character-blue.png">
-              <img id="image-character-red" src="image/character-red.png">
--->
-              <img id="image-topic" src="image/banner.webp">
-              <p class="text-date">2016.1.23 - 25 就在 NCTU 國立交通大學</p>
-            </div>
-
-
-<!--
-            <div id="guide-index-arrow">
-              <p>關於本年會</p>
-              <img src="image/arrow.png">
-            </div>
--->
-
-          </div>
-
-          <div class="page-content">
-            <article>
-              <!--簡介待補...-->
-              <h1 class="relative title">課程</h1>
-
-              <div id="event-iot" class="event-container">
-                <div class="col">
-                  <h2>IoT的實作與相關應用</h2>
-                  <h3>講師：嘉義高中 陳贊旭</h3>
-                </div>
-                <div class="col">
-                  <img src="image/courses/iot.webp">
-                </div>
-                <div>&nbsp;</div>
-              </div>
-              <div id="event-encryption" class="event-container">
-                <div class="col">
-                  <h2>密碼的意義</h2>
-                  <h3>講師：臺南女中 凃佩妤</h3>
-                </div>
-                <div class="col">
-                  <img src="image/courses/rsa.webp">
-                </div>
-                <div>&nbsp;</div>
-              </div>
-
-              <div id="event-3ddraw" class="event-container">
-                <div class="col">
-                  <h2>3D繪圖</h2>
-                  <h3>講師：臺大資工 涂家銘</h3>
-                </div>
-                <div class="col">
-                  <img src="image/courses/3ddraw.webp">
-                </div>
-                <div>&nbsp;</div>
-              </div>
-
-              <div id="event-web" class="event-container">
-                <div class="col">
-                  <h2>Web基礎相關知識與進階</h2>
-                  <h3>講師：新竹高中 蕭于傑</h3>
-                </div>
-                <div class="col">
-                  <img src="image/courses/web.jpg">
-                </div>
-                <div>&nbsp;</div>
-              </div>
-
-              <div id="event-security" class="event-container">
-                <div class="col">
-                  <h2>資訊安全</h2>
-                  <h3>講師：嘉義高中 楊志璿</h3>
-                </div>
-                <div class="col">
-                  <img src="image/courses/security.png">
-                </div>
-                <div>&nbsp;</div>
-              </div>
-
-              <div id="event-git" class="event-container">
-                <div class="col">
-                  <h2>GIT</h2>
-                  <h3>講師：新竹高中 蔡奇夆</h3>
-                </div>
-                <div class="col">
-                  <img src="image/courses/git.png">
-                </div>
-                <div>&nbsp;</div>
-              </div>
-            </article>
-          </div>
-        </div>
-        <div id="page-schedule" class="page-container">
-          <div class="sky">
-            <div class="grass"></div>
-            <img class="image-grass image-grass1" src="image/grass.png">
-            <img class="image-grass image-grass2" src="image/grass.png">
-            <img id="image-light-house" src="image/light-house.png">
-
-          </div>
-
-          <div class="page-upground">
-            <div id="group-events" style="text-align:center">
-<!--              <h1>課程</h1>-->
-<!--
-
-              <div class="col">
-                <div id="event-daily" class="event-container">
-                  <h2>資訊溝通與工程師的日常</h2>
-                  <h3>講師：</h3>
-                </div>
-              </div>
--->
-
-<!--              <img height="400" src="image/schedule.webp">-->
-
-              <div class="clear"></div>
-<!--
-
-              <div id="event-iot-info" class="data-storage">
-                <div class="data-event">
-                  <h2>IoT的實作與相關應用</h2>
-                  <p>IoT的實作與相關應用...</p>
-                  <img class="bg-small-stone" src="image/courses/iot.webp">
-                </div>
-              </div>
-
-              <div id="event-salon-info" class="data-storage">
-                <div class="data-event">
-                  <h2>密碼學 (密碼的意義、RSA) </h2>
-                  <p>密碼學 (密碼的意義、RSA) ...</p>
-                  <img class="bg-small-stone" src="image/courses/rsa.webp">
-                </div>
-              </div>
-
-              <div id="event-unconference-info" class="data-storage">
-                <div class="data-event">
-                  <h2>3D繪圖</h2>
-                  <p>3D繪圖...</p>
-                  <img class="bg-small-stone" src="image/courses/3ddraw.webp">
-                </div>
-              </div>
--->
-
-            </div>
-          </div>
-
-          <div class="page-content schedule-content">
-            <h1 class="title">時程表</h1>
-<!--
-            <div id="conf-map">
-              會場地圖
-              <img src="image/map1.png" class="icon">
-
-              <div class="data-storage">
-                <div class="conf-map">
-                  <h1>會場地圖</h1>
-                  <img class="conf-map" src="image/map.png">
-                </div>
-              </div>
-            </div>
--->
-            <div id="conference-time">
-              <table class="conf-time-table">
-                <tbody>
-                  <tr>
-                    <th class="empty-slot"></th>
-                    <th>1/23</th>
-                    <th>1/24</th>
-                    <th>1/25</th>
-                  </tr>
-                  <tr>
-                    <td class="time">
-                      <p class="stime">08<small>00</small>
-                      </p>
-                    </td>
-                    <td colspan="1" rowspan="1"></td>
-                    <td colspan="1" rowspan="2" class="clickable confslot">課程2</td>
-                    <td colspan="1" rowspan="4">交大參訪</td>
-                  </tr>
-                  <tr>
-                    <td class="time">
-                      <p class="stime">09<small>00</small>
-                      </p>
-                    </td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td class="time">
-                      <p class="stime">10<small>00</small>
-                      </p>
-                    </td>
-                    <td colspan="1" rowspan="1"></td>
-                    <td colspan="1" rowspan="2" class="clickable confslot">課程3</td>
-                  </tr>
-                  <tr>
-                    <td class="time">
-                      <p class="stime">11<small>00</small>
-                      </p>
-                    </td>
-                    <td rowspan="1">會合</td>
-                  </tr>
-                  <tr>
-                    <td class="time">
-                      <p class="stime">12<small>00</small>
-                      </p>
-                    </td>
-                    <td colspan="3">
-                      吃飯，小隊時間
-                    </td>
-                  </tr>
-
-                  <tr>
-                    <td class="time">
-                      <p class="stime">13<small>00</small>
-                      </p>
-                      <p></p>
-                    </td>
-                    <td>大地遊戲</td>
-                    <td class="clickable confslot">課程4</td>
-                    <td rowspan="3">結業式</td>
-                  </tr>
-
-                  <tr>
-                    <td class="time">
-                      <p class="stime">15<small>00</small>
-                      </p>
-                      <p></p>
-                      <p></p>
-                    </td>
-                    <td class="clickable confslot">課程1</td>
-                    <td>解密遊戲</td>
-                  </tr>
-
-                  <tr>
-                    <td class="time">
-                      <p class="stime">18<small>00</small>
-                      </p>
-                      <p></p>
-                      <p></p>
-                    </td>
-                    <td rowspan="2">團隊對抗</td>
-                    <td rowspan="2">賭遊戲場</td>
-                  </tr>
-
-                  <tr>
-                    <td class="time">
-                      <p class="stime">21<small>00</small>
-                      </p>
-                      <p></p>
-                      <p></p>
-                    </td>
-                    <td>賦歸</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-
-          </div>
-          </div>
-        <div id="page-sponsor" class="page-container">
-          <div class="sky">
-            <div class="grass"></div>
-            <img class="image-grass image-grass1" src="image/grass.png">
-            <img class="image-grass image-grass2" src="image/grass.png">
-          </div>
-        </div>
-
-        <div id="page-location" class="page-container">
-          <div class="sky">
-            <div class="grass"></div>
-            <img class="image-grass image-grass1" src="image/grass.png">
-            <img class="image-grass image-grass2" src="image/grass.png">
-          </div>
-
-          <div class="page-upground">
-            <div id="emails">
-              <div class="col">
-                <a href="mailto:unitedwintertrip107@googlegroups.com">
-                  <img src="image/email-icon.png">
-                </a>
-                <p>聯絡信箱-1</p>
-                <small>unitedwintertrip107@googlegroups.com</small>
-              </div>
-              <div class="col">
-                <a href="mailto:contact@unitedwintercamp107.tech">
-                  <img src="image/email-icon2.png">
-                </a>
-                <p>聯絡信箱-2</p>
-                <small>unitedwintertrip107@googlegroups.com</small>
-              </div>
-            </div>
-          </div>
-
-          <div class="page-content">
-            <div id="staff">
-              <div class="col">
-                <a href="mailto:unitedwintertrip107@googlegroups.com">
-                  <img src="image/staffs/">
-                </a>
-                <p>總召 沈郁哲</p>
-                <small>0978-645-044</small>
-              </div>
-            </div>
-<!--
-            <article>
-              <h1 class="relative">
-                聯絡資訊：
-              </h1>
-              <ul>
-                <li>總召 沈郁哲
-                <li>0978-645-044
-                <br>
-                <li>副召 吳巧心
-                <li>0978-825-613
-                <br>
-
-                <li>副召 陳育靜
-                <li>0935-890-524
-                <br>
-
-                <li>副召 魏鳴億
-                <li>0928-452-817
-                <br>
-
-                <li>聯絡信箱-1
-                <li>unitedwintertrip107@googlegroups.com
-                <br>
-
-                <li>聯絡信箱-2
-                <li>contact@unitedwintercamp107.tech
-              </ul>
-            </article>
--->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div id="footer">
-      <div id="footer-sponsor">
-        <h1>共同主辦</h1>
-        <div class="row">
-          <div class="sponsor col-left">
-            <a class="logo" href="https://zh-tw.facebook.com/WLCSC/" target="_blank">
-              <img src="image/logos/wlcsc.jpg">
-            </a>
-            <p class="title">武陵高中資訊研究社</p>
-            <p class="title">WLCSC</p>
-            <br>
-          </div>
-
-          <div class="sponsor col-left">
-            <a class="logo" href="http://blog.csdc.tw/" target="_blank">
-              <img src="image/logos/csdc.png">
-            </a>
-            <p class="title">新竹高中軟體研究社</p>
-            <p class="title">CSDC</p>
-            <br>
-          </div>
-
-          <div class="sponsor col-left">
-            <a class="logo" href="http://cs.cysh.cy.edu.tw/" target="_blank">
-              <img src="image/logos/cycc.jpg">
-            </a>
-            <p class="title">嘉義高中電腦社</p>
-            <p class="title">CYCC</p>
-            <br>
-          </div>
-
-          <div class="sponsor col-left">
-            <a class="logo" href="https://www.facebook.com/CYGSH.PRC/" target="_blank">
-              <img src="image/logos/cygprc.jpg">
-            </a>
-            <p class="title">嘉義女中程式研究社</p>
-            <p class="title">CYGPRC</p>
-            <br>
-          </div>
-
-          <div class="sponsor col-left">
-            <a class="logo" href="https://zh-tw.facebook.com/HKHSprogrammingDesignClub/" target="_blank">
-              <img src="image/logos/hkhs2.png">
-            </a>
-            <p class="title">興國高中研究特殊機器人應用社</p>
-            <p class="title">RLC</p>
-            <br>
-          </div>
-
-          <div class="sponsor col-left">
-            <a class="logo" href="https://www.facebook.com/tnsciss" target="_blank">
-              <img src="image/logos/tnssh.png">
-            </a>
-            <p class="title">臺南二中資訊研究社</p>
-            <p class="title">CISS</p>
-            <br>
-          </div>
-
-          <div class="sponsor col-left">
-            <a class="logo" href="http://www.tfcis.org" target="_blank">
-              <img src="image/logos/tfcis.png">
-            </a>
-            <p class="title">臺南一中資訊社</p>
-            <p class="title">TFcis</p>
-            <br>
-          </div>
-
-          <div class="sponsor col-left">
-            <a class="logo" href="https://zh-tw.facebook.com/tngsirc/" target="_blank">
-              <img src="image/logos/tngs.png">
-            </a>
-            <p class="title">臺南女中資訊研究社</p>
-            <p class="title">TGIRC</p>
-            <br>
-          </div>
-
-          <div class="sponsor col-left">
-            <a class="logo" href="https://www.facebook.com/CCIRS.1st/" target="_blank">
-              <img src="image/logos/ccirs.png">
-            </a>
-            <p class="title">家齊高中資訊研究社</p>
-            <p class="title">CCIRS</p>
-            <br>
-          </div>
-
-          <div class="sponsor col-left">
-            <a class="logo" href="https://zh-tw.facebook.com/i2trc2/" target="_blank">
-              <img src="image/logos/kghs.gif">
-            </a>
-            <p class="title">高雄女中資訊社</p>
-            <p class="title">I<sup>2</sup>TRC<sup>2</sup></p>
-            <br>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <link rel="stylesheet" type="text/css" href="sitcon2016.css">
-  <script type="text/javascript" src="sitcon2016.js"></script>
-</body>
-
-</html>
+<!-- saved from url=(0043)http://site-932935-101-4967.strikingly.com/ -->
+<html itemscope="" itemtype="http://schema.org/WebPage" lang="zh" xmlns:fb="https://www.facebook.com/2008/fbml" xmlns:og="http://ogp.me/ns#" xmlns="http://www.w3.org/1999/xhtml" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> <title>十資無畏 on Strikingly</title>  <meta content="width=device-width,initial-scale=1.0,user-scalable=yes,minimum-scale=1.0,maximum-scale=3.0" id="viewport" name="viewport"> <script src="./index_files/beacon.js.下載" async=""></script><script type="text/javascript" async="" src="./index_files/keen-2.1.0-min.js.下載"></script><script async="" src="./index_files/analytics.js.下載"></script><script>
+//<![CDATA[
+window.$S={};$S.global_conf={"premium_apps":["HtmlApp","EcwidApp","MailChimpApp","CeleryApp","LocuApp"],"environment":"production","host_suffix":"strikingly.com","asset_url":"https://assets.strikingly.com","locale":"en","in_china":false,"browser_locale":null,"is_sxl":false,"user_image_cdn":{"qn":"//7xpea4.com1.z0.glb.clouddn.com"},"SEGMENTIO_API_KEY":"eb3txa37hi","FACEBOOK_APP_ID":"138736959550286","WECHAT_APP_ID":null,"WECHAT_MP_APP_ID":"","KEEN_IO_PROJECT_ID":"5317e03605cd66236a000002","KEEN_IO_WRITE_KEY":"efd460f8e282891930ff1957321c12b64a6db50694fd0b4a01d01f347920dfa3ce48e8ca249b5ea9917f98865696cfc39bc6814e4743c39af0a4720bb711627d9cf0fe63d5d52c3866c9c1c3178aaec6cbfc1a9ab62a3c9a827d2846a9be93ecf4ee3d61ebee8baaa6a1d735bff6e37b","FIREBASE_URL":"bobcat.firebaseIO.com","CLOUDINARY_CLOUD_NAME":"hrscywv4p","CLOUDINARY_PRESET":"oxbxiyxl","rollout":{"advanced_layouts":true,"new_mobile_actions":true,"background_for_all_sections":false,"wechat_sharing":false,"new_wechat_oauth":false}};$S.app_instances=[];$S.nav=[{"name":null,"uid":null}];$S.conf={"pages_show_static_path":"https://assets.strikingly.com/assets/pages_show_static-4d08f94dc7664a1f59eb3602ef4c2240.js","keenio_collection":"strikingly_pageviews","keenio_collection_sharding":"strikingly_pageviews-11300001-11400000","keenio_pbs_impression_collection":"strikingly_pbs_impression","keenio_pbs_conversion_collection":"strikingly_pbs_conversion","keenio_pageservice_imageshare_collection":"strikingly_pageservice_imageshare","keenio_page_socialshare_collection":"strikingly_page_socialshare","keenio_page_framing_collection":"strikingly_page_framing","keenio_file_download_collection":"strikingly_file_download","keenio_ecommerce_buyer_landing":"strikingly_ecommerce_buyer_landing","keenio_ecommerce_buyer_viewed_checkout_dialog":"strikingly_ecommerce_buyer_viewed_checkout_dialog","keenio_ecommerce_buyer_completed_shipping_address":"strikingly_ecommerce_buyer_completed_shipping_address","keenio_ecommerce_buyer_selected_payment_method":"strikingly_ecommerce_buyer_selected_payment_method","keenio_ecommerce_buyer_canceled_order":"strikingly_ecommerce_buyer_canceled_order","keenio_ecommerce_buyer_added_item_to_cart":"strikingly_ecommerce_buyer_added_item_to_cart","is_screenshot_rendering":false,"contact_form_layouts_feature":true,"ecommerce_stripe_alipay":false,"headless_render":null,"wx_instant_follow":false};$S.fonts={"abril fatface":"\"abril fatface\", georgia, serif","quando":"\"quando\", serif","josefin slab":"\"josefin slab\", georgia, serif","trocchi":"trocchi, georgia, serif","lato":"lato, helvetica, sans-serif","roboto":"roboto, helvetica, sans-serif","raleway":"raleway, helvetica, sans-serif","playfair display":"\"playfair display\", serif","bitter":"bitter, georgia, serif","vollkorn":"\"vollkorn\", times, georgia, serif","titillium":"\"titillium web\", titillium, helvetica, sans-serif","bebas neue":"\"bebas neue\", bebas, helvetica, sans-serif","brandon":"\"brandon grotesque\", brandon, helvetica, sans-serif","tisa":"tisa, georgia, serif","garamond":"garamond, serif","gotham rounded":"\"gotham rounded\", helvetica, sans-serif","arial":"arial, sans-serif","georgia":"georgia, serif","arapey":"arapey, georgia, serif","titillium web":"\"titillium web\", titillium, helvetica, sans-serif","dosis":"dosis, \"terminal dosis\", helvetica, sans-serif","arvo":"arvo, georgia, serif","roboto slab":"\"roboto slab\", helvetica, sans-serif","montserrat":"montserrat, helvetica, sans-serif","nunito":"nunito, helvetica, sans-serif","archivo narrow":"\"archivo narrow\", helvetica, sans-serif","cardo":"cardo, georgia, serif","old standard tt":"\"old standard tt\", georgia, serif","pt sans narrow":"\"pt sans narrow\", sans-serif","lora":"lora, georgia, serif","istok web":"\"istok web\", helvetica, sans-serif","chewy":"chewy, helvetica, sans-serif","great vibes":"\"great vibes\", cursive","parisienne":"parisienne, cursive","dancing script":"\"dancing script\", cursive","roboto condensed":"\"roboto condensed\", sans-serif","hei":"\"Open Sans\", \"Lucida Grande\", \"Verdana\", \"Pingfang SC\", \"Pingfang TC\", \"Hiragino Sans GB\", \"Microsoft YaHei\", sans-serif","song":"\"Cardo\", \"STSong\", \"Songti SC\", \"SimSun\", serif","kai":"\"Times New Roman\", STKaiTi, KaiTi, Kaiti_GB2312, serif","open sans":"\"open sans\", helvetica, sans-serif","source sans pro":"\"source sans pro\", helvetica, sans-serif","work sans":"work sans, helvetica, sans-serif"};$S.country_list={};$S.stores={"showStatic":{"footerLogoSeoData":{"anchor_link":"https://www.strikingly.com/?ref=logo\u0026permalink=site-932935-101-4967\u0026custom_domain=\u0026utm_campaign=footer_pbs\u0026utm_content=http%3A%2F%2Fsite-932935-101-4967.strikingly.com%2F\u0026utm_medium=user_page\u0026utm_source=footer_logo","anchor_text":"Powered by Strikingly - Best website builder for the mobile age"},"isEditMode":false},"pageData":{"type":"Site","id":"f_0559dc67-3ae4-465f-960a-af777dad5d84","defaultValue":null,"horizontal":false,"fixedSocialMedia":false,"new_page":true,"showMobileNav":true,"showCookieNotification":false,"showTermsAndConditions":false,"multi_pages":false,"showNav":true,"showFooter":true,"showStrikinglyLogo":true,"showNavigationButtons":false,"showButtons":true,"navFont":"","titleFont":"","logoFont":"","bodyFont":"open sans","headingFont":"","theme":"fresh","templateVariation":"ice","templatePreset":"blue","termsText":null,"fontPreset":null,"pages":[{"type":"Page","id":"f_24eaa2ea-04d2-4d7a-ae8f-39e2909eb74e","defaultValue":null,"sections":[{"type":"Slide","id":"f_2dc8cc04-8420-45ff-878b-0da8d59585ad","defaultValue":null,"template_id":null,"template_name":"title","components":{"slideSettings":{"type":"SlideSettings","id":"f_dc3d4f0f-7cd3-43d1-85da-ee1205a4aeaa","defaultValue":null,"show_nav":false,"nameChanged":null,"name":"十資無畏","sync_key":null,"layout_variation":"center-subTop-full","display_settings":{}},"text1":{"type":"RichText","id":"f_7ce159fe-d07f-4bef-ae49-a1b19fa969a1","defaultValue":false,"value":"\u003cp\u003e十資無畏\u003c/p\u003e","backupValue":"\u003cdiv\u003e\n\u003cdiv\u003e\n\u003cdiv\u003eIT'S A SOCIAL MOVEMENT.\u003c/div\u003e\n\u003c/div\u003e\n\u003c/div\u003e","version":1},"text2":{"type":"RichText","id":"f_ee74959a-3aad-4020-832b-87c2d7bf6aa9","defaultValue":false,"value":"\u003cp\u003e2016 十校電資聯合寒訓\u003c/p\u003e","backupValue":"\u003cdiv\u003e\n\u003cdiv\u003e\n\u003cdiv\u003e\n\u003cdiv\u003e\u003cem\u003eThis isn't just social media.\u003c/em\u003e\u003c/div\u003e\n\u003c/div\u003e\n\u003c/div\u003e\n\u003c/div\u003e","version":1},"text3":{"type":"RichText","id":"f_4fdeeca0-dcf2-4f95-abaa-549fe45a2088","defaultValue":true,"value":"Lorem ipsum","backupValue":null,"version":null},"media1":{"type":"Media","id":"f_2822b1aa-bfb9-4ff1-b01e-502e71158537","defaultValue":false,"video":{"type":"Video","id":"f_68611e0c-ee53-4bd9-a8c0-62f3a75fd150","defaultValue":true,"html":"","url":"http://vimeo.com/12236680","thumbnail_url":null,"maxwidth":700,"description":null},"image":{"type":"Image","id":"f_e38a16dd-75c3-490d-899e-28c010446732","defaultValue":false,"link_url":"","thumb_url":"!","url":"!","caption":"","description":"","storageKey":"932935/1be4eef3-1c88-4ea3-9a27-0a1cfdfc8599_f4otdt","storage":"c","format":"png","h":345,"w":1200,"s":87002,"new_target":true},"current":"image"},"background1":{"type":"Background","id":"f_cf29124c-f5d5-4c8f-936b-129ff485ad7f","defaultValue":false,"url":"https://uploads.strikinglycdn.com/static/backgrounds/cityscape/158.jpg","textColor":"light","backgroundVariation":"","sizing":"cover","userClassName":null,"videoUrl":"","videoHtml":"","storageKey":null,"storage":null,"format":null,"h":900,"w":1600,"s":null},"background2":{"type":"Background","id":"f_e2224fb1-b799-41c4-849f-86338e379fc0","defaultValue":true,"url":"http://uploads.strikinglycdn.com/static/backgrounds/striking-pack-2/27.jpg","textColor":"light","backgroundVariation":"","sizing":"cover","userClassName":null,"videoUrl":"","videoHtml":"","storageKey":null,"storage":null,"format":null,"h":null,"w":null,"s":null},"button1":{"type":"Button","id":"f_6955e2ae-6e73-4e6b-b849-d3d35caf1adc","defaultValue":false,"text":"點我報名","url":"https://goo.gl/forms/PESVo4oYXbf2ZbaH2","new_target":false}}},{"type":"Slide","id":"f_f268f5dc-7d38-4c07-a182-35663ff419c8","defaultValue":null,"template_id":null,"template_name":"media","components":{"slideSettings":{"type":"SlideSettings","id":"f_c35fdd0e-4d40-4bc5-a17e-f498a1279cb6","defaultValue":null,"show_nav":true,"nameChanged":null,"name":"活動行程","sync_key":null,"layout_variation":"media-center-text","display_settings":{}},"background1":{"type":"Background","id":"f_3b921ba9-ba17-425a-9eb5-ca746167ba5b","defaultValue":true,"url":"","textColor":"light","backgroundVariation":"","sizing":"cover","userClassName":null,"videoUrl":"","videoHtml":"","storageKey":null,"storage":null,"format":null,"h":null,"w":null,"s":null},"text1":{"type":"RichText","id":"f_2f4bc028-4a98-4ea6-9953-b730fcc68e2f","defaultValue":false,"value":"\u003cp\u003e活動行程\u003c/p\u003e","backupValue":"\u003cdiv\u003eWho's Talking About Us\u003c/div\u003e","version":1},"text2":{"type":"RichText","id":"f_5a39c43d-ab8d-4eb3-b513-3f05e61e7c01","defaultValue":false,"value":"\u003cp\u003e\u003cem\u003e1/23 - 1/25\u003c/em\u003e\u003c/p\u003e","backupValue":"Take a look and enjoy!","version":1},"repeatable1":{"type":"Repeatable","id":"f_ba08681a-9083-4580-8cc0-77e6ba8698a5","defaultValue":true,"list":[{"type":"RepeatableItem","id":"f_4f180ff2-c6e9-47e1-ac62-92bab4c3395e","defaultValue":null,"components":{"media1":{"type":"Media","id":"f_99d0e5bd-37f0-484e-b9b8-62530c92d54d","defaultValue":false,"video":{"type":"Video","id":"f_deaef4a6-c850-4667-a13f-1688d0ccfacf","defaultValue":false,"html":"","url":"","thumbnail_url":"","maxwidth":700,"description":null},"image":{"type":"Image","id":"f_525b9339-9d44-48be-8b1e-404ae64cd740","defaultValue":false,"link_url":null,"thumb_url":"!","url":"!","caption":"","description":"","storageKey":"932935/擷取_ck6jvf","storage":"c","format":"png","h":478,"w":610,"s":7742,"new_target":true},"current":"image"},"text1":{"type":"RichText","id":"f_4e58a733-0b72-45d2-8a50-11cbafea4579","defaultValue":false,"value":"","backupValue":"\u003cdiv\u003e\n\u003cdiv\u003eA small tagline\u003c/div\u003e\n\u003c/div\u003e","version":1},"text2":{"type":"RichText","id":"f_0f2bc7ae-dd79-4f9a-b422-5af4ada87308","defaultValue":true,"value":"","backupValue":null,"version":null},"text3":{"type":"RichText","id":"f_5c00f52e-5247-4f03-b87b-01e528a4bcea","defaultValue":false,"value":"","backupValue":"A sentence or two describing this item.","version":1},"button1":{"type":"Button","id":"f_408b1333-c0b7-4be1-a0a0-ef2fa4d17716","defaultValue":true,"text":"","url":"","new_target":null}}}],"components":{"media1":{"type":"Media","id":"f_03e8baf0-c7d0-4360-883f-a7a8ac1c2830","defaultValue":true,"video":{"type":"Video","id":"f_f0b3b7bf-a256-4da8-85e9-a62e56a35762","defaultValue":true,"html":"","url":"http://vimeo.com/12236680","thumbnail_url":null,"maxwidth":700,"description":null},"image":{"type":"Image","id":"f_1ca053cb-9bd4-483b-a3bb-10a295ac7464","defaultValue":true,"link_url":null,"thumb_url":"http://uploads.strikinglycdn.com/static/backgrounds/striking-pack-3/7.jpg","url":"http://uploads.strikinglycdn.com/static/backgrounds/striking-pack-3/7.jpg","caption":"","description":"","storageKey":null,"storage":null,"format":null,"h":null,"w":null,"s":null,"new_target":true},"current":"image"},"text1":{"type":"RichText","id":"f_b6cebcbf-1578-4fc1-9318-90251d94f01a","defaultValue":true,"value":"Some caption here","backupValue":null,"version":null},"text2":{"type":"RichText","id":"f_91e05608-2fcc-4471-b4dc-26d8bb0f5c3d","defaultValue":true,"value":"A small tagline","backupValue":null,"version":null},"text3":{"type":"RichText","id":"f_f9bc96ce-cff3-4307-bff0-be1fbfb6f5f1","defaultValue":true,"value":"A sentence or two describing this item.","backupValue":null,"version":null}}}}},{"type":"Slide","id":"f_c8cf4e19-de1d-4779-9eec-c537b33d54c8","defaultValue":null,"template_id":null,"template_name":"rows","components":{"slideSettings":{"type":"SlideSettings","id":"f_b6f26009-4ed8-4384-a3d9-2bb7ff67bab9","defaultValue":false,"show_nav":true,"nameChanged":null,"name":"教學內容","sync_key":null,"layout_variation":"row-medium1-text-right","display_settings":{}},"background1":{"type":"Background","id":"f_a551a6a6-a755-477e-9e33-b4dbf0513bec","defaultValue":true,"url":"http://uploads.strikinglycdn.com/static/backgrounds/striking-pack-2/28.jpg","textColor":"light","backgroundVariation":"","sizing":"cover","userClassName":null,"videoUrl":"","videoHtml":"","storageKey":null,"storage":null,"format":null,"h":null,"w":null,"s":null},"text1":{"type":"RichText","id":"f_79ac2331-639a-49fc-ac5a-8ab1710b8267","defaultValue":false,"value":"\u003cp\u003e教學內容\u003c/p\u003e","backupValue":"\u003cdiv\u003e\u003cspan\u003eWhat We Do\u003c/span\u003e\u003c/div\u003e","version":1},"text2":{"type":"RichText","id":"f_7fa887ce-3480-4aed-8973-074d006a861d","defaultValue":false,"value":"\u003cp\u003e無所不在的互聯網\u003c/p\u003e","backupValue":"\u003cdiv\u003e\u003cspan\u003eWe're on a mission to connect your cause to the people who care the most.\u003c/span\u003e\u003c/div\u003e","version":1},"repeatable1":{"type":"Repeatable","id":"f_35ef8eff-240a-45af-8fd6-7eb6fd0d784e","defaultValue":false,"list":[{"type":"RepeatableItem","id":"f_d9ab6fbb-f377-4326-8d81-e4ad60648452","defaultValue":null,"components":{"media1":{"type":"Media","id":"f_d46833e0-4d7b-42e0-954a-896974012239","defaultValue":true,"video":{"type":"Video","id":"f_51d1f39f-937d-4f68-a15e-83c4c472e893","defaultValue":true,"html":"","url":"http://vimeo.com/18150336","thumbnail_url":null,"maxwidth":700,"description":null},"image":{"type":"Image","id":"f_68489d46-aa7a-4814-b9c7-d03d0dcfc7be","defaultValue":false,"link_url":"","thumb_url":"!","url":"!","caption":"","description":"","storageKey":"932935/9812494_orig_c8l9jp","storage":"c","format":"jpg","h":533,"w":600,"s":81779,"new_target":true},"current":"image"},"text1":{"type":"RichText","id":"f_73addccc-7afc-402b-a2cb-596b69b6c079","defaultValue":false,"value":"\u003cp\u003e\u003cstrong\u003eIoT的實作與相關應用\u003c/strong\u003e\u003c/p\u003e","backupValue":"Title Text","version":1},"text2":{"type":"RichText","id":"f_d60a2d8c-f9fa-4ca7-b188-239866ad6bb2","defaultValue":false,"value":"\u003cp\u003e講師：嘉義高中 陳贊旭\u003c/p\u003e","backupValue":"A small tagline","version":1},"text3":{"type":"RichText","id":"f_1a2b3194-fceb-4e69-9aa9-e4acf1c219b0","defaultValue":false,"value":"","backupValue":"A sentence or two describing this item. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.","version":1},"button1":{"type":"Button","id":"f_c3204c0f-2625-4544-9705-5df84f316fa8","defaultValue":true,"text":"","url":"","new_target":null}}},{"type":"RepeatableItem","id":"f_c3a7a07a-5724-4bf7-8ec8-f29a20d0a2a4","defaultValue":null,"components":{"media1":{"type":"Media","id":"f_ece30afe-7fae-4cb0-8793-eef93f59b4b7","defaultValue":true,"video":{"type":"Video","id":"f_51d1f39f-937d-4f68-a15e-83c4c472e893","defaultValue":true,"html":"","url":"http://vimeo.com/18150336","thumbnail_url":null,"maxwidth":700,"description":null},"image":{"type":"Image","id":"f_68489d46-aa7a-4814-b9c7-d03d0dcfc7be","defaultValue":false,"link_url":null,"thumb_url":"!","url":"!","caption":"","description":"","storageKey":"932935/password_agzfrc","storage":"c","format":"jpg","h":481,"w":720,"s":116143,"new_target":true},"current":"image"},"text1":{"type":"RichText","id":"f_501e4f76-c85a-46b1-8c35-c7c0c2db6d39","defaultValue":false,"value":"\u003cp\u003e\u003cstrong\u003e密碼的意義\u003c/strong\u003e\u003c/p\u003e","backupValue":"Title Text","version":1},"text2":{"type":"RichText","id":"f_b5942eb8-3fae-46c1-8756-07fddbc86a06","defaultValue":false,"value":"\u003cp\u003e講師：臺南女中 凃佩妤\u003c/p\u003e","backupValue":"A small tagline","version":1},"text3":{"type":"RichText","id":"f_97a1ad80-c3b1-4ebe-b9cb-0235f9d4d40e","defaultValue":false,"value":"","backupValue":"A sentence or two describing this item. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.","version":1},"button1":{"type":"Button","id":"f_ca359deb-265c-45b5-9cf7-842c5858ef7a","defaultValue":true,"text":"","url":"","new_target":null}}},{"type":"RepeatableItem","id":"f_f6fd5de7-9389-47e1-9394-04f9e1579595","defaultValue":null,"components":{"media1":{"type":"Media","id":"f_db7ab87b-b0a2-4863-80cb-11dea48de129","defaultValue":true,"video":{"type":"Video","id":"f_51d1f39f-937d-4f68-a15e-83c4c472e893","defaultValue":true,"html":"","url":"http://vimeo.com/18150336","thumbnail_url":null,"maxwidth":700,"description":null},"image":{"type":"Image","id":"f_68489d46-aa7a-4814-b9c7-d03d0dcfc7be","defaultValue":false,"link_url":null,"thumb_url":"!","url":"!","caption":"","description":"","storageKey":"932935/C5-10_123DDesign_fbyy7c","storage":"c","format":"jpg","h":423,"w":599,"s":70193,"new_target":true},"current":"image"},"text1":{"type":"RichText","id":"f_cde1b2c4-44c9-43fe-bcdf-70c4eb2590a4","defaultValue":false,"value":"\u003cp\u003e\u003cstrong\u003e3D繪圖\u003c/strong\u003e\u003c/p\u003e","backupValue":"Title Text","version":1},"text2":{"type":"RichText","id":"f_bced0d98-8d49-47db-8e54-5801cfc3f49b","defaultValue":false,"value":"\u003cp\u003e講師：臺大資工 涂家銘\u003c/p\u003e","backupValue":"A small tagline","version":1},"text3":{"type":"RichText","id":"f_9a4b4333-a045-4434-aaec-f7293b6d2852","defaultValue":false,"value":"","backupValue":"A sentence or two describing this item. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.","version":1},"button1":{"type":"Button","id":"f_9e06ffb0-0e61-4877-8126-62aa78170993","defaultValue":true,"text":"","url":"","new_target":null}}},{"type":"RepeatableItem","id":"f_267ce92e-c703-47b5-8739-1bfe1460f260","defaultValue":null,"components":{"media1":{"type":"Media","id":"f_eeabdaed-f003-43b8-8e09-cbdabac43520","defaultValue":false,"video":{"type":"Video","id":"f_51d1f39f-937d-4f68-a15e-83c4c472e893","defaultValue":true,"html":"","url":"http://vimeo.com/18150336","thumbnail_url":null,"maxwidth":700,"description":null},"image":{"type":"Image","id":"f_68489d46-aa7a-4814-b9c7-d03d0dcfc7be","defaultValue":false,"link_url":"","thumb_url":"!","url":"!","caption":"","description":"","storageKey":"932935/web_qmfcpi","storage":"c","format":"jpg","h":388,"w":388,"s":19137,"new_target":true},"current":"image"},"text1":{"type":"RichText","id":"f_0ae8fb0a-e6ce-46b8-b621-0f9f71658a9e","defaultValue":false,"value":"\u003cp\u003e\u003cstrong\u003eWeb基礎相關知識與進階\u003c/strong\u003e\u003c/p\u003e","backupValue":"Title Text","version":1},"text2":{"type":"RichText","id":"f_eb87607e-40b5-4b8c-8a52-d0671f987ed0","defaultValue":false,"value":"\u003cp\u003e講師：新竹高中 蕭于傑\u003c/p\u003e","backupValue":"A small tagline","version":1},"text3":{"type":"RichText","id":"f_8f5d2d1c-b110-45cb-86e2-e1805000f4cc","defaultValue":false,"value":"","backupValue":"A sentence or two describing this item. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.","version":1},"button1":{"type":"Button","id":"f_1cf1bc84-a106-479b-9650-126b3bb70c3c","defaultValue":true,"text":"","url":"","new_target":null}}},{"type":"RepeatableItem","id":"f_6a56e435-56fd-48c6-a539-4429373f78f2","defaultValue":null,"components":{"media1":{"type":"Media","id":"f_731b15fa-311f-4928-ac6b-a6d0c96310e1","defaultValue":false,"video":{"type":"Video","id":"f_51d1f39f-937d-4f68-a15e-83c4c472e893","defaultValue":true,"html":"","url":"http://vimeo.com/18150336","thumbnail_url":null,"maxwidth":700,"description":null},"image":{"type":"Image","id":"f_68489d46-aa7a-4814-b9c7-d03d0dcfc7be","defaultValue":false,"link_url":"","thumb_url":"!","url":"!","caption":"","description":"","storageKey":"932935/security_su42bu","storage":"c","format":"png","h":318,"w":720,"s":381527,"new_target":true},"current":"image"},"text1":{"type":"RichText","id":"f_795a174f-ea69-4859-81ec-e7a38ff9517e","defaultValue":false,"value":"\u003cp\u003e\u003cstrong\u003e資訊安全\u003c/strong\u003e\u003c/p\u003e","backupValue":"Title Text","version":1},"text2":{"type":"RichText","id":"f_2c71b519-e303-4cab-b83f-bd860aca6efd","defaultValue":false,"value":"\u003cp\u003e講師：嘉義高中 楊志璿\u003c/p\u003e","backupValue":"A small tagline","version":1},"text3":{"type":"RichText","id":"f_ca9e5f34-e753-462a-91c0-d0c84ee95150","defaultValue":false,"value":"","backupValue":"A sentence or two describing this item. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.","version":1},"button1":{"type":"Button","id":"f_4ad68928-4ce7-4c76-8523-0c7390a1502c","defaultValue":true,"text":"","url":"","new_target":null}}},{"type":"RepeatableItem","id":"f_e9de918b-54c9-4a7f-8c58-93cccd4df78b","defaultValue":null,"components":{"media1":{"type":"Media","id":"f_8e5d1bf5-5144-4ca9-84ed-55cb70f8b8f8","defaultValue":false,"video":{"type":"Video","id":"f_51d1f39f-937d-4f68-a15e-83c4c472e893","defaultValue":true,"html":"","url":"http://vimeo.com/18150336","thumbnail_url":null,"maxwidth":700,"description":null},"image":{"type":"Image","id":"f_68489d46-aa7a-4814-b9c7-d03d0dcfc7be","defaultValue":false,"link_url":"","thumb_url":"!","url":"!","caption":"","description":"","storageKey":"932935/git_b8jlh9","storage":"c","format":"png","h":301,"w":720,"s":7081,"new_target":true},"current":"image"},"text1":{"type":"RichText","id":"f_89065173-e7ac-48ed-9d2a-e7160cbe2a8b","defaultValue":false,"value":"\u003cp\u003e\u003cstrong\u003eGIT\u003c/strong\u003e\u003c/p\u003e","backupValue":"Title Text","version":1},"text2":{"type":"RichText","id":"f_5f0b5c5a-ce45-42dc-b809-7e767f705c8f","defaultValue":false,"value":"\u003cp\u003e講師：新竹高中 蔡奇夆\u003c/p\u003e","backupValue":"A small tagline","version":1},"text3":{"type":"RichText","id":"f_21abb357-dc7b-4772-941d-431a8bf09056","defaultValue":false,"value":"","backupValue":"A sentence or two describing this item. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.","version":1},"button1":{"type":"Button","id":"f_afa57014-14bd-4fa4-a44e-00c447c41d58","defaultValue":true,"text":"","url":"","new_target":null}}}],"components":{"media1":{"type":"Media","id":"f_50c4593b-9045-47fa-bca3-29e8dd7f1a3e","defaultValue":true,"video":{"type":"Video","id":"f_1b01b186-db6a-4cb0-be99-75f65488c3d6","defaultValue":true,"html":"","url":"http://vimeo.com/12236680","thumbnail_url":null,"maxwidth":700,"description":null},"image":{"type":"Image","id":"f_67bd1786-c2d0-4cc9-ae34-c27aeafa033c","defaultValue":true,"link_url":null,"thumb_url":"//uploads.strikinglycdn.com/static/backgrounds/striking-pack-3/7.jpg","url":"//uploads.strikinglycdn.com/static/backgrounds/striking-pack-3/7.jpg","caption":"","description":"","storageKey":null,"storage":null,"format":null,"h":null,"w":null,"s":null,"new_target":true},"current":"image"},"text1":{"type":"RichText","id":"f_08bd5617-dd4d-41ec-9212-289884cc28e3","defaultValue":true,"value":"Title Text","backupValue":null,"version":null},"text2":{"type":"RichText","id":"f_d9d1b498-f484-4df3-878e-c92f1cd75d83","defaultValue":true,"value":"A small tagline","backupValue":null,"version":null},"text3":{"type":"RichText","id":"f_16c4ec38-e4ee-470e-a1de-00e78f171b15","defaultValue":true,"value":"A sentence or two describing this item. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.","backupValue":null,"version":null}}}}},{"type":"Slide","id":"f_c100f3a5-7f80-4069-b971-03681234a3f7","defaultValue":true,"template_id":null,"template_name":"icons","components":{"slideSettings":{"type":"SlideSettings","id":"f_8b8f385a-75e6-41a8-88c2-96e939384ffb","defaultValue":true,"show_nav":true,"nameChanged":null,"name":"主辦單位","sync_key":null,"layout_variation":"col","display_settings":{}},"background1":{"type":"Background","id":"f_81025880-d1d7-4da6-bef7-38fc5b4a229c","defaultValue":true,"url":"http://uploads.strikinglycdn.com/static/backgrounds/striking-pack-2/28.jpg","textColor":"light","backgroundVariation":"","sizing":"cover","userClassName":null,"videoUrl":"","videoHtml":"","storageKey":null,"storage":null,"format":null,"h":null,"w":null,"s":null},"text1":{"type":"RichText","id":"f_1eea915a-649e-4f5f-b032-7f754ce1d3de","defaultValue":false,"value":"\u003cp\u003e主辦單位\u003c/p\u003e","backupValue":"Connect With Us","version":1},"text2":{"type":"RichText","id":"f_45a7aeea-663f-456a-b64c-9baa14cecb95","defaultValue":false,"value":"\u003cp\u003e十校電資社團\u003c/p\u003e","backupValue":"Make sure to add links to the icons!","version":1},"repeatable1":{"type":"Repeatable","id":"f_af414ab1-94d0-4b9b-a329-e23fc88e0494","defaultValue":false,"list":[{"type":"RepeatableItem","id":"f_a4fd2f2d-394c-49f2-beb9-f8801b4cce8a","defaultValue":true,"components":{"image1":{"type":"Image","id":"f_c215e094-4349-4ba7-bedc-3b02f2017594","defaultValue":false,"link_url":null,"thumb_url":"!","url":"!","caption":"","description":"","storageKey":"932935/57f558dd-7181-4209-a40d-be1449216449_ympwcw","storage":"c","format":"jpg","h":342,"w":342,"s":27892,"new_target":true},"text1":{"type":"RichText","id":"f_e75a665f-5c7b-42eb-af6f-3ca900a3e6ec","defaultValue":false,"value":"\u003cp\u003e武陵高中資訊研究社\u003c/p\u003e\u003cp\u003eWLCSC\u003c/p\u003e","backupValue":"郵箱","version":1}}},{"type":"RepeatableItem","id":"f_af760618-f698-4968-90ed-4c36595654bd","defaultValue":true,"components":{"image1":{"type":"Image","id":"f_4a4c437d-d29c-4a61-9b2c-ccd3f015925a","defaultValue":false,"link_url":null,"thumb_url":"!","url":"!","caption":"","description":"","storageKey":"932935/csdc2_xqldoi","storage":"c","format":"png","h":480,"w":480,"s":31544,"new_target":true},"text1":{"type":"RichText","id":"f_54765112-8b45-4b19-b079-a469394957bd","defaultValue":false,"value":"\u003cp\u003e新竹高中軟體研究社\u003c/p\u003e\u003cp\u003eCSDC\u003c/p\u003e","backupValue":"電話","version":1}}},{"type":"RepeatableItem","id":"f_1497a06c-f541-439b-9cf5-56543e08d67f","defaultValue":null,"components":{"image1":{"type":"Image","id":"f_1f324c90-c846-4ae4-a7c4-0bbea7fa9b19","defaultValue":false,"link_url":null,"thumb_url":"!","url":"!","caption":"","description":"","storageKey":"932935/cycc_xroxop","storage":"c","format":"jpg","h":480,"w":480,"s":49874,"new_target":true},"text1":{"type":"RichText","id":"f_0a05752c-9cca-46ac-a7f4-879c148794a2","defaultValue":false,"value":"\u003cp\u003e嘉義高中電腦社\u003c/p\u003e\u003cp\u003eCYCC\u003c/p\u003e","backupValue":"電話","version":1}}},{"type":"RepeatableItem","id":"f_5ae5c3a9-b667-4c6e-8862-6907489d02df","defaultValue":null,"components":{"image1":{"type":"Image","id":"f_81664258-beee-4a85-a4a8-7ff5e18b3d84","defaultValue":false,"link_url":null,"thumb_url":"!","url":"!","caption":"","description":"","storageKey":"932935/cygprc_fv2mai","storage":"c","format":"jpg","h":480,"w":480,"s":74166,"new_target":true},"text1":{"type":"RichText","id":"f_9d91c9ba-f721-460b-b83e-68a0d97c0991","defaultValue":false,"value":"\u003cp\u003e嘉義女中程式研究社\u003c/p\u003e\u003cp\u003eCYGPRC\u003c/p\u003e","backupValue":"電話","version":1}}},{"type":"RepeatableItem","id":"f_86c429e0-5a9d-4b9e-a3a1-ececfee47213","defaultValue":null,"components":{"image1":{"type":"Image","id":"f_fbff6522-914a-4179-b736-0f46d9e5a0ef","defaultValue":false,"link_url":null,"thumb_url":"!","url":"!","caption":"","description":"","storageKey":"932935/hkhs2_pvkgy8","storage":"c","format":"png","h":468,"w":480,"s":658377,"new_target":true},"text1":{"type":"RichText","id":"f_4939a947-de0a-4801-807b-f0ff3ebc1412","defaultValue":false,"value":"\u003cp\u003e興國高中研究\u003c/p\u003e\u003cp\u003e特殊機器人應用社\u003c/p\u003e\u003cp\u003eRLC\u003c/p\u003e","backupValue":"電話","version":1}}},{"type":"RepeatableItem","id":"f_8af00451-7417-4e57-90f5-4ca754a7f56a","defaultValue":null,"components":{"image1":{"type":"Image","id":"f_e700fb19-667b-410a-b7d9-9868b72642ae","defaultValue":false,"link_url":null,"thumb_url":"!","url":"!","caption":"","description":"","storageKey":"932935/tnssh_r0a3nn","storage":"c","format":"png","h":400,"w":400,"s":129634,"new_target":true},"text1":{"type":"RichText","id":"f_37c55b9d-d861-4543-88e2-3115d616b2a3","defaultValue":false,"value":"\u003cp\u003e臺南二中資訊研究社\u003c/p\u003e\u003cp\u003eCISS\u003c/p\u003e","backupValue":"電話","version":1}}},{"type":"RepeatableItem","id":"f_996129fc-586b-40b4-9dd8-3b4564c2fcf2","defaultValue":null,"components":{"image1":{"type":"Image","id":"f_772c152e-0f73-493d-904c-fab3b1dc18ef","defaultValue":false,"link_url":null,"thumb_url":"!","url":"!","caption":"","description":"","storageKey":"932935/tfcis_wpysw8","storage":"c","format":"png","h":251,"w":251,"s":30604,"new_target":true},"text1":{"type":"RichText","id":"f_8ce11915-1958-4d4e-a833-ae100f166209","defaultValue":false,"value":"\u003cp\u003e臺南一中資訊社\u003c/p\u003e\u003cp\u003eTFcis\u003c/p\u003e","backupValue":"電話","version":1}}},{"type":"RepeatableItem","id":"f_96e0891e-89d0-4444-994a-dafe16a08146","defaultValue":null,"components":{"image1":{"type":"Image","id":"f_4f4fb19b-9fbc-4b3b-bf85-07ac5cad384f","defaultValue":false,"link_url":null,"thumb_url":"!","url":"!","caption":"","description":"","storageKey":"932935/tngs_dxmohw","storage":"c","format":"png","h":137,"w":150,"s":4464,"new_target":true},"text1":{"type":"RichText","id":"f_3ee21d2f-dd6f-4c7d-adf4-55cec3730285","defaultValue":false,"value":"\u003cp\u003e臺南女中資訊研究社\u003c/p\u003e\u003cp\u003eTGIRC\u003c/p\u003e","backupValue":"電話","version":1}}},{"type":"RepeatableItem","id":"f_7b45e8b2-e2e3-46cb-8b58-b38359295b3b","defaultValue":null,"components":{"image1":{"type":"Image","id":"f_db34c3df-e00a-4ce0-a737-54ef3f5e8d55","defaultValue":false,"link_url":null,"thumb_url":"!","url":"!","caption":"","description":"","storageKey":"932935/ccirs_wnfeee","storage":"c","format":"png","h":430,"w":480,"s":53124,"new_target":true},"text1":{"type":"RichText","id":"f_db4e34b8-2417-4b51-8c96-62aa2dcd1f22","defaultValue":false,"value":"\u003cp\u003e家齊高中資訊研究社\u003c/p\u003e\u003cp\u003eCCIRS\u003c/p\u003e","backupValue":"電話","version":1}}},{"type":"RepeatableItem","id":"f_718ba96d-20e1-4a73-b7f0-478548f37387","defaultValue":null,"components":{"image1":{"type":"Image","id":"f_474dc422-0f5a-47b7-9111-cf8aa418d168","defaultValue":false,"link_url":null,"thumb_url":"!","url":"!","caption":"","description":"","storageKey":"932935/kghs_htuema","storage":"c","format":"gif","h":183,"w":180,"s":22130,"new_target":true},"text1":{"type":"RichText","id":"f_075fa2ae-10c6-47e6-8349-8e85adceb280","defaultValue":false,"value":"\u003cp\u003e高雄女中資訊社\u003c/p\u003e\u003cp\u003eI\u003csup\u003e2\u003c/sup\u003eTRC\u003csup\u003e2\u003c/sup\u003e\u003c/p\u003e","backupValue":"電話","version":1}}}],"components":{"image1":{"type":"Image","id":"f_002aef4a-f4db-492c-a36b-95e0105ca266","defaultValue":true,"link_url":null,"thumb_url":null,"url":"//uploads.strikinglycdn.com/page/images/icons/email-icon.png","caption":"","description":"","storageKey":null,"storage":null,"format":null,"h":null,"w":null,"s":null,"new_target":true},"text1":{"type":"RichText","id":"f_369fd978-5575-4100-b389-66a6fea0bc38","defaultValue":true,"value":"Add text here","backupValue":null,"version":null}}}}},{"type":"Slide","id":"f_e6708fe0-3dd8-4f7c-a8ff-90f30bec8d7b","defaultValue":null,"template_id":null,"template_name":"columns","components":{"slideSettings":{"type":"SlideSettings","id":"f_3860e139-06a0-4249-9c04-57c7cec751b3","defaultValue":false,"show_nav":true,"nameChanged":null,"name":"聯絡我們","sync_key":null,"layout_variation":"col-four-text","display_settings":{}},"background1":{"type":"Background","id":"f_da0165d6-d882-4d2e-b6be-03de506e364a","defaultValue":true,"url":"http://uploads.strikinglycdn.com/static/backgrounds/striking-pack-2/28.jpg","textColor":"light","backgroundVariation":"","sizing":"cover","userClassName":null,"videoUrl":"","videoHtml":"","storageKey":null,"storage":null,"format":null,"h":null,"w":null,"s":null},"text1":{"type":"RichText","id":"f_7e1e60fd-31f9-40a3-92e2-9e553f2f5d78","defaultValue":false,"value":"\u003cp\u003e聯絡我們\u003c/p\u003e","backupValue":"\u003cdiv\u003e\n\u003cdiv\u003e\n\u003cdiv\u003e\n\u003cdiv\u003eWho We Are\u003c/div\u003e\n\u003c/div\u003e\n\u003c/div\u003e\n\u003c/div\u003e","version":1},"text2":{"type":"RichText","id":"f_91bbb7dc-fe05-401d-bab1-dd29ef91cbba","defaultValue":false,"value":"","backupValue":"\u003cdiv\u003e\u003cspan\u003eWe're on a mission to connect your cause to the people who care the most.\u003c/span\u003e\u003c/div\u003e","version":1},"repeatable1":{"type":"Repeatable","id":"f_116bf75d-ecdf-41d7-88ba-07e91a5bc675","defaultValue":false,"list":[{"type":"RepeatableItem","id":"f_c9388c29-afaa-4607-acf2-8ca599f191ce","defaultValue":null,"components":{"media1":{"type":"Media","id":"f_5b1da744-c840-42e4-8e38-8558294737c2","defaultValue":true,"video":{"type":"Video","id":"f_13d14128-93bb-43a3-9ef7-1a6ebf13d247","defaultValue":null,"html":"","url":"http://vimeo.com/18150336","thumbnail_url":null,"maxwidth":700,"description":null},"image":{"type":"Image","id":"f_c57035f8-5eb2-4da0-ba11-27d4f8e899f9","defaultValue":false,"link_url":null,"thumb_url":"!","url":"!","caption":"","description":"","storageKey":"932935/15194596_1245914095482931_6026612548781055274_o_r9udlx","storage":"c","format":"jpg","h":320,"w":320,"s":177537,"new_target":true},"current":"image"},"text1":{"type":"RichText","id":"f_d9d9b7b9-e089-44b0-a58c-aa374e6f17d8","defaultValue":false,"value":"\u003cp\u003e總召 沈郁哲\u003c/p\u003e","backupValue":"標題文字","version":1},"text2":{"type":"RichText","id":"f_b33a3401-2110-4eb7-a9ec-0e2b2ac20ceb","defaultValue":false,"value":"\u003cp\u003e0978-645-044\u003c/p\u003e","backupValue":"小標語","version":1},"text3":{"type":"RichText","id":"f_e44c53af-e267-4ef1-b545-aea4644891c7","defaultValue":false,"value":"","backupValue":"簡介你的項目或成員。夏天的飛鳥，飛到我的窗前唱歌，又飛去了。秋天的黃葉，它們没有什麼可唱，只喊息一聲，飛落在那裡。","version":1},"button1":{"type":"Button","id":"f_1835428c-21e9-4280-a471-1eeebae82195","defaultValue":true,"text":"","url":"","new_target":null}}},{"type":"RepeatableItem","id":"f_94fbd9a1-dfa0-4920-94a6-0318f45a33e4","defaultValue":null,"components":{"media1":{"type":"Media","id":"f_5e06ea1c-7990-49e5-81ac-6d8c32723e70","defaultValue":true,"video":{"type":"Video","id":"f_13d14128-93bb-43a3-9ef7-1a6ebf13d247","defaultValue":null,"html":"","url":"http://vimeo.com/18150336","thumbnail_url":null,"maxwidth":700,"description":null},"image":{"type":"Image","id":"f_c57035f8-5eb2-4da0-ba11-27d4f8e899f9","defaultValue":false,"link_url":null,"thumb_url":"!","url":"!","caption":"","description":"","storageKey":"932935/be423407-ccbf-45af-b8ec-e1330fabcd7b_al3r3i","storage":"c","format":"jpg","h":320,"w":320,"s":27767,"new_target":true},"current":"image"},"text1":{"type":"RichText","id":"f_6daae777-b439-41f2-b619-ceca0c0088ce","defaultValue":false,"value":"\u003cp\u003e副召 吳巧心\u003c/p\u003e","backupValue":"標題文字","version":1},"text2":{"type":"RichText","id":"f_0ea848c7-a999-4065-af82-e365335fa786","defaultValue":false,"value":"\u003cp\u003e0978-825-613\u003c/p\u003e","backupValue":"小標語","version":1},"text3":{"type":"RichText","id":"f_b29bb087-4991-49da-af3b-9b4dc67cfae7","defaultValue":false,"value":"","backupValue":"簡介你的項目或成員。夏天的飛鳥，飛到我的窗前唱歌，又飛去了。秋天的黃葉，它們没有什麼可唱，只喊息一聲，飛落在那裡。","version":1},"button1":{"type":"Button","id":"f_6314ff28-2509-4957-9b9c-e7e3f39c6948","defaultValue":true,"text":"","url":"","new_target":null}}},{"type":"RepeatableItem","id":"f_3804cd83-f546-4529-be93-28e816e366b1","defaultValue":null,"components":{"media1":{"type":"Media","id":"f_d2831a72-54d4-46f0-954d-6503eff4da5b","defaultValue":true,"video":{"type":"Video","id":"f_13d14128-93bb-43a3-9ef7-1a6ebf13d247","defaultValue":null,"html":"","url":"http://vimeo.com/18150336","thumbnail_url":null,"maxwidth":700,"description":null},"image":{"type":"Image","id":"f_c57035f8-5eb2-4da0-ba11-27d4f8e899f9","defaultValue":false,"link_url":null,"thumb_url":"!","url":"!","caption":"","description":"","storageKey":"932935/a6670bb4-697d-41e2-a39e-b9437f23cac1_em1ufp","storage":"c","format":"jpg","h":320,"w":320,"s":20305,"new_target":true},"current":"image"},"text1":{"type":"RichText","id":"f_ecb348bc-2e75-47f0-bc2b-4bd24aaf8884","defaultValue":false,"value":"\u003cp\u003e副召 陳育靜\u003c/p\u003e","backupValue":"標題文字","version":1},"text2":{"type":"RichText","id":"f_1d6753e1-3196-44a3-8a7a-be01cd202284","defaultValue":false,"value":"\u003cp\u003e0935-890-524\u003c/p\u003e","backupValue":"小標語","version":1},"text3":{"type":"RichText","id":"f_c35f4721-3325-47d0-9f1d-3968b60a9d20","defaultValue":false,"value":"","backupValue":"簡介你的項目或成員。夏天的飛鳥，飛到我的窗前唱歌，又飛去了。秋天的黃葉，它們没有什麼可唱，只喊息一聲，飛落在那裡。","version":1},"button1":{"type":"Button","id":"f_4bae568f-8c77-46c5-aeed-952115f00047","defaultValue":true,"text":"","url":"","new_target":null}}},{"type":"RepeatableItem","id":"f_9c532bd1-ee36-4e23-94dc-8e7473393844","defaultValue":null,"components":{"media1":{"type":"Media","id":"f_9df7fb94-eb3c-4438-8def-6327c17b0660","defaultValue":true,"video":{"type":"Video","id":"f_13d14128-93bb-43a3-9ef7-1a6ebf13d247","defaultValue":null,"html":"","url":"http://vimeo.com/18150336","thumbnail_url":null,"maxwidth":700,"description":null},"image":{"type":"Image","id":"f_c57035f8-5eb2-4da0-ba11-27d4f8e899f9","defaultValue":false,"link_url":null,"thumb_url":"!","url":"!","caption":"","description":"","storageKey":"932935/12968097_1013433675416441_3176640271907066795_o_tthya2","storage":"c","format":"jpg","h":320,"w":320,"s":63518,"new_target":true},"current":"image"},"text1":{"type":"RichText","id":"f_04d70c46-77df-4f53-8d5e-262bb0d0e2c9","defaultValue":false,"value":"\u003cp\u003e副召 魏鳴億\u003c/p\u003e","backupValue":"標題文字","version":1},"text2":{"type":"RichText","id":"f_dc9b5ab3-641a-416b-8424-72502ce2c2fd","defaultValue":false,"value":"\u003cp\u003e0928-452-817\u003c/p\u003e","backupValue":"小標語","version":1},"text3":{"type":"RichText","id":"f_c12fb6b7-60d9-44cd-bf0d-3f361822cfd3","defaultValue":false,"value":"","backupValue":"簡介你的項目或成員。夏天的飛鳥，飛到我的窗前唱歌，又飛去了。秋天的黃葉，它們没有什麼可唱，只喊息一聲，飛落在那裡。","version":1},"button1":{"type":"Button","id":"f_1ed58b5b-32c6-4c7b-a11e-96ef5641c7f1","defaultValue":true,"text":"","url":"","new_target":null}}},{"type":"RepeatableItem","id":"f_62bdeab6-70ce-4585-a636-b93bf7dfebdd","defaultValue":null,"components":{"media1":{"type":"Media","id":"f_222d42d6-9e72-4d51-b080-b75cfe124310","defaultValue":true,"video":{"type":"Video","id":"f_13d14128-93bb-43a3-9ef7-1a6ebf13d247","defaultValue":null,"html":"","url":"http://vimeo.com/18150336","thumbnail_url":null,"maxwidth":700,"description":null},"image":{"type":"Image","id":"f_c57035f8-5eb2-4da0-ba11-27d4f8e899f9","defaultValue":false,"link_url":null,"thumb_url":"https://uploads.strikinglycdn.com/page/images/icons/email-icon.png","url":"https://uploads.strikinglycdn.com/page/images/icons/email-icon.png","caption":"","description":"","storageKey":null,"storage":null,"format":null,"h":160,"w":160,"s":null,"new_target":true},"current":"image"},"text1":{"type":"RichText","id":"f_97630ca0-8729-4fa2-8c8c-6ed4d7a31d30","defaultValue":false,"value":"\u003cp\u003e聯絡信箱-1\u003c/p\u003e","backupValue":"標題文字","version":1},"text2":{"type":"RichText","id":"f_399958f7-565a-4dfc-b49d-b6d4274cce28","defaultValue":false,"value":"\u003cp style=\"text-align: left;\"\u003e\u003ca href=\"mailto:unitedwintertrip107@googlegroups.com\"\u003eunitedwintertrip107@googlegroups.com\u003c/a\u003e\u003c/p\u003e","backupValue":"小標語","version":1},"text3":{"type":"RichText","id":"f_692e3fa5-d5fb-497d-a92b-f004af8f8522","defaultValue":false,"value":"","backupValue":"簡介你的項目或成員。夏天的飛鳥，飛到我的窗前唱歌，又飛去了。秋天的黃葉，它們没有什麼可唱，只喊息一聲，飛落在那裡。","version":1},"button1":{"type":"Button","id":"f_e072b83a-7601-4ce5-8405-276e3d984549","defaultValue":true,"text":"","url":"","new_target":null}}},{"type":"RepeatableItem","id":"f_8eaed57f-497a-4cf6-8c91-30840a3cf1b7","defaultValue":null,"components":{"media1":{"type":"Media","id":"f_84198bf4-1b29-42c3-8b6c-a6ee9258de4b","defaultValue":true,"video":{"type":"Video","id":"f_13d14128-93bb-43a3-9ef7-1a6ebf13d247","defaultValue":null,"html":"","url":"http://vimeo.com/18150336","thumbnail_url":null,"maxwidth":700,"description":null},"image":{"type":"Image","id":"f_c57035f8-5eb2-4da0-ba11-27d4f8e899f9","defaultValue":false,"link_url":null,"thumb_url":"https://assets.strikingly.com/static/icons/brown/email-icon.png","url":"https://assets.strikingly.com/static/icons/brown/email-icon.png","caption":"","description":"","storageKey":null,"storage":null,"format":null,"h":160,"w":160,"s":null,"new_target":true},"current":"image"},"text1":{"type":"RichText","id":"f_f170c9a0-9850-4138-96f8-7bac5f9543a7","defaultValue":false,"value":"\u003cp\u003e聯絡信箱-2\u003c/p\u003e","backupValue":"標題文字","version":1},"text2":{"type":"RichText","id":"f_d1ef520c-68c6-4fc3-8d06-a1ab2a9beb19","defaultValue":false,"value":"\u003cp style=\"text-align:left\"\u003e\u003ca href=\"mailto:unitedwintertrip107@googlegroups.com\"\u003econtact@unitedwintercamp107.tech\u003c/a\u003e\u003c/p\u003e","backupValue":"小標語","version":1},"text3":{"type":"RichText","id":"f_589f9fff-45d8-46a7-ad4d-353ea9060a92","defaultValue":false,"value":"","backupValue":"簡介你的項目或成員。夏天的飛鳥，飛到我的窗前唱歌，又飛去了。秋天的黃葉，它們没有什麼可唱，只喊息一聲，飛落在那裡。","version":1},"button1":{"type":"Button","id":"f_10aa2552-6d0e-4102-82d9-6e962a2c6a8f","defaultValue":true,"text":"","url":"","new_target":null}}}],"components":{"media1":{"type":"Media","id":"f_b2400d4e-7078-4470-a00c-3f1ba69716ff","defaultValue":true,"video":{"type":"Video","id":"f_8582b31b-be94-4290-8697-076c4939597b","defaultValue":true,"html":"","url":"http://vimeo.com/12236680","thumbnail_url":null,"maxwidth":700,"description":null},"image":{"type":"Image","id":"f_8761417f-9a47-40af-863e-0f25e64a87eb","defaultValue":true,"link_url":null,"thumb_url":"//uploads.strikinglycdn.com/static/backgrounds/striking-pack-3/7.jpg","url":"//uploads.strikinglycdn.com/static/backgrounds/striking-pack-3/7.jpg","caption":"","description":"","storageKey":null,"storage":null,"format":null,"h":null,"w":null,"s":null,"new_target":true},"current":"image"},"text1":{"type":"RichText","id":"f_520e8f0c-5116-464d-a77a-f12db50449fa","defaultValue":true,"value":"Title Text","backupValue":null,"version":null},"text2":{"type":"RichText","id":"f_d1dd4399-0cfb-4372-9379-dd5222349262","defaultValue":true,"value":"A small tagline","backupValue":null,"version":null},"text3":{"type":"RichText","id":"f_6f9910b3-3823-4898-bb55-41bd8ec59a72","defaultValue":true,"value":"A sentence or two describing this item. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet.","backupValue":null,"version":null}}}}},{"type":"Slide","id":"f_d72b4178-1d28-466b-820d-c443a855d43a","defaultValue":null,"template_id":null,"template_name":"rows","components":{"slideSettings":{"type":"SlideSettings","id":"f_3c42811c-0ae1-47f3-a4ee-1b717fab9948","defaultValue":null,"show_nav":true,"nameChanged":null,"name":"贊助","sync_key":null,"layout_variation":"row-medium1-text-right","display_settings":{}},"background1":{"type":"Background","id":"f_e20e732e-02f3-4b38-8654-77937fdcfd13","defaultValue":true,"url":"http://uploads.strikinglycdn.com/static/backgrounds/striking-pack-2/28.jpg","textColor":"light","backgroundVariation":"","sizing":"cover","userClassName":null,"videoUrl":"","videoHtml":"","storageKey":null,"storage":null,"format":null,"h":null,"w":null,"s":null},"text1":{"type":"RichText","id":"f_0e7f38a6-c7b7-4399-bbf8-bb4bbfabce51","defaultValue":false,"value":"\u003cp\u003e贊助\u003c/p\u003e","backupValue":"我們在做什麼","version":1},"text2":{"type":"RichText","id":"f_32032141-8f96-43d2-a97c-15ae049696d8","defaultValue":false,"value":"","backupValue":"在這裡展示你的項目，功能或客戶","version":1},"repeatable1":{"type":"Repeatable","id":"f_dd29c5b1-4b12-4a01-8dfd-e6657cd2228a","defaultValue":false,"list":[],"components":{"media1":{"type":"Media","id":"f_706c27a6-0373-4d9a-957e-c4c13d27387d","defaultValue":true,"video":{"type":"Video","id":"f_75c15f02-9f7a-4994-ae34-366afd1cc905","defaultValue":true,"html":"","url":"http://vimeo.com/18150336","thumbnail_url":null,"maxwidth":700,"description":null},"image":{"type":"Image","id":"f_e659bd72-3160-4061-a1d4-5722fa576009","defaultValue":true,"link_url":null,"thumb_url":"//uploads.strikinglycdn.com/static/backgrounds/striking-pack-3/7.jpg","url":"//uploads.strikinglycdn.com/static/backgrounds/striking-pack-3/7.jpg","caption":"","description":"","storageKey":null,"storage":null,"format":null,"h":null,"w":null,"s":null,"new_target":true},"current":"image"},"text1":{"type":"RichText","id":"f_77e3cf54-b7d6-47dd-a998-6535be198278","defaultValue":true,"value":"標題文字","backupValue":null,"version":null},"text2":{"type":"RichText","id":"f_00dc844d-0671-4141-b540-e837fb498363","defaultValue":true,"value":"小標語","backupValue":null,"version":null},"text3":{"type":"RichText","id":"f_a11383f3-dd5a-4391-8dc2-a32bd852cc5d","defaultValue":true,"value":"簡介你的項目或成員。夏天的飛鳥，飛到我的窗前唱歌，又飛去了。秋天的黃葉，它們没有什麼可唱，只喊息一聲，飛落在那裡。","backupValue":null,"version":null},"button1":{"type":"Button","id":"f_8702bc31-3807-4ca7-b93f-4bbe34d02440","defaultValue":true,"text":"","url":"","new_target":null}}}}}],"title":null,"uid":null,"path":null,"autoPath":null}],"menu":{"type":"Menu","id":"f_15602978-7583-410c-9f5e-81f3d39eaa3b","defaultValue":null,"template_name":"navbar","logo":null,"components":{"image1":{"type":"Image","id":"f_d2e82515-663f-4fe7-bc69-927b30c6b356","defaultValue":false,"link_url":"","thumb_url":"/assets/icons/transparent.png","url":"/assets/icons/transparent.png","caption":"","description":"","storageKey":null,"storage":null,"format":null,"h":null,"w":null,"s":null,"new_target":true},"image2":{"type":"Image","id":"f_b5ec6f85-7abe-4f9f-a39d-8cd237283765","defaultValue":false,"link_url":null,"thumb_url":null,"url":"http://assets.strikingly.com/assets/themes/fresh/power.png","caption":"","description":"","storageKey":null,"storage":null,"format":null,"h":37,"w":32,"s":null,"new_target":true},"text1":{"type":"RichText","id":"f_7e8fbb4f-448d-4a74-9c0f-073cfa43fd8e","defaultValue":true,"value":"Title Text","backupValue":null,"version":null},"text2":{"type":"RichText","id":"f_b03453bb-139b-4c8b-ac8b-81017e372350","defaultValue":true,"value":"Add a subtitle","backupValue":null,"version":null},"button1":{"type":"Button","id":"f_88a251b0-9e6e-42a9-80de-1370f7262460","defaultValue":true,"text":"Buy now","url":"http://strikingly.com","new_target":null}}},"footer":{"type":"Footer","id":"f_949eaa76-83f1-4b35-9f12-a05c08177454","defaultValue":null,"socialMedia":null,"copyright":null,"components":{"socialMedia":{"type":"SocialMediaList","id":"f_2fc32a35-1901-4b24-8255-a495c0e8502a","defaultValue":false,"link_list":[{"type":"Facebook","id":"f_d754b522-9ef8-4eaf-9b6a-a78c8b2dfdaf","defaultValue":null,"url":"","link_url":null,"share_text":null,"app_id":null,"show_button":true},{"type":"Twitter","id":"f_75d6d55a-76e3-4816-9be6-03890ab20421","defaultValue":null,"url":"","link_url":null,"share_text":null,"show_button":true},{"type":"GPlus","id":"f_3cb12ec0-75ef-41df-ade0-8d7593dc85f7","defaultValue":null,"url":"","link_url":null,"share_text":null,"show_button":false},{"type":"LinkedIn","id":"f_859ca814-9bb7-4cee-8e0b-8d1a9ab60a20","defaultValue":null,"url":"","link_url":null,"share_text":null,"show_button":false},{"type":"Instagram","id":"f_b076d785-8a58-47ee-9d7e-f32b6f7bdb34","defaultValue":null,"url":"","link_url":null,"share_text":null,"show_button":false}],"button_list":[{"type":"Facebook","id":"f_78cb3a49-5fb0-46de-9de9-09149c8fec7d","defaultValue":null,"url":"","link_url":"","share_text":"","app_id":543870062356274,"show_button":true},{"type":"Twitter","id":"f_a4e504c0-3ec6-4913-84ff-6f93f36c615b","defaultValue":null,"url":"","link_url":"","share_text":"","show_button":true},{"type":"GPlus","id":"f_74178ca7-8665-4333-9d15-3ab0e114defe","defaultValue":null,"url":"","link_url":"","share_text":"","show_button":true},{"type":"LinkedIn","id":"f_1a679d8c-a111-4d11-b9cc-d28cba6f71cc","defaultValue":null,"url":"","link_url":"","share_text":"","show_button":false},{"type":"Pinterest","id":"f_802d5af9-6faf-4d25-bce8-ae9d5305a12d","defaultValue":null,"url":"","link_url":null,"share_text":null,"show_button":false}],"list_type":null},"copyright":{"type":"RichText","id":"f_1293145e-1d76-4c88-90e9-72e0027ab2e9","defaultValue":false,"value":"\u003cp\u003e© 2016\u003c/p\u003e","backupValue":"Copyright 2015","version":1},"background1":{"type":"Background","id":"f_53ece53a-8f1e-43af-8770-e917fa57180b","defaultValue":true,"url":"","textColor":"light","backgroundVariation":"","sizing":"cover","userClassName":null,"videoUrl":"","videoHtml":"","storageKey":null,"storage":null,"format":null,"h":null,"w":null,"s":null}},"layout_variation":null},"submenu":{"type":"SubMenu","id":"f_ffbadfb5-e7ad-4337-8840-258d82d4487d","defaultValue":null,"list":[],"components":{"link":{"type":"Button","id":"f_3b723239-4c7e-47bf-af89-1a181fcd2848","defaultValue":null,"text":"Facebook","url":"http://www.facebook.com","new_target":true}}},"customColors":{"type":"CustomColors","id":"f_006259ff-531a-416e-8b77-81444c64ef82","defaultValue":null,"active":false,"highlight1":"#746644","highlight2":"#cecdcd"},"navigation":{}},"pageMeta":{"user":{"membership":"free","id":932935},"category":{"name":"event","id":5},"s4_migration":{"is_migrated":false,"is_retired_theme":false,"has_custom_code":false},"page_groups":[],"slide_names":["十資無畏","活動行程","教學內容","主辦單位","聯絡我們","贊助"],"theme":{"name":"fresh"},"connected_sites":[],"linkedin_app":false,"is_weitie_page":false,"forced_locale":"en","mobile_actions":{"phone":null,"sms":null,"location":null,"email":null,"version":"v2","actions":[]},"public_url":"http://site-932935-101-4967.strikingly.com/","current_path":"/","current_path_params":{},"rollouts":{"custom_code":true,"pro_sections":false,"pro_apps":false,"new_settings_dialog_feature":true,"sections_name_sync":true},"site_mode":"show","google":{"enable_ga_universal":false,"analytics_tracker":null,"analytics_type":null,"site_checker":null},"facebook_pixel_id":null,"optimizely":{"project_id":null,"experiment_id":null},"id":11346376,"permalink":"site-932935-101-4967","created_at":"2016-12-25T07:35:02.000-08:00","logo_url":"https://assets.strikingly.com/assets/fb_images/default-29b65491716eb10633c146bc3a2abbbf.png","icon_url":"https://assets.strikingly.com/assets/favicon-c47192e11e9de90b81d61f137a18136f.ico","description":"","name":"十資無畏","social_media_config":{"url":"http://site-932935-101-4967.strikingly.com/","title":"十資無畏","image":"https://assets.strikingly.com/assets/fb_images/default-29b65491716eb10633c146bc3a2abbbf.png","description":"","fb_app_id":"138736959550286"},"keenio_config":{"keenio_project_id":"5317e03605cd66236a000002","keenio_write_key":"efd460f8e282891930ff1957321c12b64a6db50694fd0b4a01d01f347920dfa3ce48e8ca249b5ea9917f98865696cfc39bc6814e4743c39af0a4720bb711627d9cf0fe63d5d52c3866c9c1c3178aaec6cbfc1a9ab62a3c9a827d2846a9be93ecf4ee3d61ebee8baaa6a1d735bff6e37b"},"show_strikingly_logo":true,"show_navigation_buttons":false,"social_media":null,"has_optimizely":false,"optimizely_experiment_id":null,"services":[],"strk_upvt":"OWxTTUpCcEJoQkZvcTVKaEMrRVJsUUhBakJQa25LL1hKeEhobTFhcWZaOWdpMzZ2dTJaUW0wYkRVZ1VrYUdSZDdvN1Z5WEVrT1lTWG5Db1crV3grT2pWL2xYQlBUaE50c3l0TWFJajY2OG1yU1hhZ1VGL21BbmlWMk5JeE1oOTNNV0tUMy9yM1AxS3BOdmg2cFBhbjhhRXFKSEUraDdDK2hCYzdRMVYyaHdvPS0tZGJYUHFLeFRZeGh4VyszNXJxcGNJZz09--363a3c3b4a53ac1c18b3bbef54caab5b65eb8290","strk_ga_tracker":"UA-25124444-6","google_analytics_tracker":null,"google_analytics_type":null,"exception_tracking":true,"ecommerce":{"seller_wechat_app_id":null}}};$S.blink={"page":{"logo_url":"https://assets.strikingly.com/assets/fb_images/default-29b65491716eb10633c146bc3a2abbbf.png","weitie_url":"http://site-932935-101-4967.weitie.co","description":"","name":"十資無畏"},"conf":{"WECHAT_APP_ID":"wxd009fb01de1ec8b5"}};
+//]]>
+</script> <link rel="stylesheet" media="screen" href="./index_files/_reset-8c33e8d599448a1a37a53476196155c9.css"> <link rel="stylesheet" media="screen" href="./index_files/css"> <link rel="stylesheet" media="screen" href="./index_files/main_v4-e464358de06d1b098443a6a2fa39fe3b.css"> <!--[if lte IE 9]><link rel="stylesheet" media="screen" href="https://assets.strikingly.com/assets/themes/fresh/main_v4_split2-5d018467ebb1dc0aee32eb368a0d5a2a.css"/><![endif]--> <link href="https://assets.strikingly.com/assets/favicon-c47192e11e9de90b81d61f137a18136f.ico" rel="shortcut icon" type="image/x-icon"> <link href="./index_files/default-29b65491716eb10633c146bc3a2abbbf.png" rel="apple-touch-icon" sizes="60x60"> <link href="./index_files/default-29b65491716eb10633c146bc3a2abbbf.png" rel="apple-touch-icon" sizes="76x76"> <link href="./index_files/default-29b65491716eb10633c146bc3a2abbbf.png" rel="apple-touch-icon" sizes="120x120"> <link href="./index_files/default-29b65491716eb10633c146bc3a2abbbf.png" rel="apple-touch-icon" sizes="152x152"> <meta content="十資無畏" property="og:title"> <meta content="http://site-932935-101-4967.strikingly.com/" property="og:url"> <meta content="https://assets.strikingly.com/assets/fb_images/default-29b65491716eb10633c146bc3a2abbbf.png" property="og:image"> <meta content="十資無畏" property="og:site_name"> <meta content="" property="og:description"> <meta content="十資無畏" itemprop="name"> <meta content="" itemprop="description"> <meta content="https://assets.strikingly.com/assets/fb_images/default-29b65491716eb10633c146bc3a2abbbf.png" itemprop="image"> <meta content="summary" name="twitter:card"> <meta content="十資無畏" name="twitter:title"> <meta content="" name="twitter:description"> <meta content="https://assets.strikingly.com/assets/fb_images/default-29b65491716eb10633c146bc3a2abbbf.png" name="twitter:image"> <meta content="" name="description"> <meta name="strikingly-host-suffix" content="strikingly.com"> <meta name="support-helper" content="{&quot;permalink&quot;:&quot;site-932935-101-4967&quot;,&quot;id&quot;:11346376}"> <link rel="canonical" href="http://site-932935-101-4967.strikingly.com/"> <link href="https://assets.strikingly.com/assets/favicon-c47192e11e9de90b81d61f137a18136f.ico" rel="shortcut icon" type="image/x-icon"> <meta name="asset-url" content="https://assets.strikingly.com"> <!--[if lte IE 10]><link rel="stylesheet" media="screen" href="https://assets.strikingly.com/assets/ie8-57342eaf489ba83ab9fc96cf7f241ada.css"/><![endif]--> <noscript> &lt;style&gt;
+  .s-entrance-mask .s-section .container { opacity: 1 !important; }
+&lt;/style&gt; </noscript> <script>
+var _gaq = _gaq || [];
+if ($S.stores.pageMeta.exception_tracking) {
+/* load errorception */
+var _errs=["518ac810441fb4b7180002fa"];(function(a,b){a.onerror=function(){_errs.push(arguments)};
+var d=function(){var a=b.createElement("script"),c=b.getElementsByTagName("script")[0];
+a.src="//d15qhc0lu1ghnk.cloudfront.net/beacon.js";a.async=!0;
+c.parentNode.insertBefore(a,c)};a.addEventListener?a.addEventListener("load",d,!1):
+a.attachEvent("onload",d)})(window,document);
+}
+
+// Google Analytics (Universal) Setup
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','__ga');
+
+// configuration for keen.io
+var Keen=Keen||{configure:function(e){this._cf=e},addEvent:function(e,t,n,i){this._eq=this._eq||[],this._eq.push([e,t,n,i])},setGlobalProperties:function(e){this._gp=e},onChartsReady:function(e){this._ocrq=this._ocrq||[],this._ocrq.push(e)}};(function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src=("https:"==document.location.protocol?"https://":"http://")+"dc8na2hxrj29i.cloudfront.net/code/keen-2.1.0-min.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();
+// Configure the Keen object with your Project ID and (optional) access keys.
+Keen.configure({
+projectId: $S.global_conf.KEEN_IO_PROJECT_ID,
+writeKey: $S.global_conf.KEEN_IO_WRITE_KEY
+});
+
+var _strk = _strk || []
+window.runAfterDomBinding = {
+  add: function(name, fn) {
+    _strk.push(['Page.didMount', fn])
+  }
+}
+
+window.strkHooks = {
+  subscribe: function(eventName, cb) {
+    _strk.push([eventName, cb])
+  }
+}
+
+
+</script> <script>
+  (function() {
+    window.$B || (window.$B = {});
+  
+  }).call(this);
+</script> <script src="./index_files/detectIE-2cff2e9dc8166a6cfd065f51bfdd909e.js.下載" async="async"></script> <style type="text/css"></style><script type="text/javascript" charset="utf-8" async="" src="./index_files/22.51176f1e395d1bc23f2f-site-bundle.js.下載"></script><script type="text/javascript" charset="utf-8" async="" src="./index_files/8.51176f1e395d1bc23f2f-site-bundle.js.下載"></script><script type="text/javascript" charset="utf-8" async="" src="./index_files/36.51176f1e395d1bc23f2f-site-bundle.js.下載"></script><script type="text/javascript" charset="utf-8" async="" src="./index_files/43.51176f1e395d1bc23f2f-site-bundle.js.下載"></script><style type="text/css">.fancybox-margin{margin-right:17px;}</style></head> <body class="show locale-en" id="user_sites" ontouchstart="" screen_capture_injected="true"> <div id="s-page-container"><div data-reactroot="" data-reactid="1"><!-- react-empty: 2 --><div id="s-content" class="s-variation-ice s-font-heading-default s-font-title-default s-font-body-open-sans" data-reactid="3"><div class="social-thumbnail" data-reactid="4"><div style="display:none;" data-reactid="5"><img src="./index_files/default-29b65491716eb10633c146bc3a2abbbf.png" alt="page thumbnail" width="300" height="300" data-reactid="6"></div><div id="lw-share-data" style="display:none;" data-reactid="7"><div class="lws-title" data-reactid="8">十資無畏</div><div class="lws-description" data-reactid="9">Website</div><div class="lws-image" data-reactid="10">https://assets.strikingly.com/assets/fb_images/default-29b65491716eb10633c146bc3a2abbbf.png</div></div></div><div class="s-navbar-section" data-reactid="11"><div id="header-container" class="navigator no-logo" data-reactid="12" style="margin-top: 0px;"><div class="container wide-container" data-reactid="13"><div class="center columns header sixteen" data-reactid="14"><div class="ib logo" id="logo" data-reactid="15"><div class="s-component s-image" data-reactid="16"><span data-reactid="17"></span></div></div><div class="nav" data-reactid="18"><ul class="s-nav" data-reactid="19"><span data-reactid="20"><li style="display:none;" data-reactid="21"><a class="s-nav-item" href="http://site-932935-101-4967.strikingly.com/#_1" data-reactid="22"><span class="s-font-body" data-reactid="23">十資無畏</span></a></li><li data-reactid="24"><a class="s-nav-item" href="http://site-932935-101-4967.strikingly.com/#_2" data-reactid="25"><span class="s-font-body" data-reactid="26">活動行程</span></a></li><li data-reactid="27"><a class="s-nav-item" href="http://site-932935-101-4967.strikingly.com/#_3" data-reactid="28"><span class="s-font-body" data-reactid="29">教學內容</span></a></li><li data-reactid="30"><a class="s-nav-item" href="http://site-932935-101-4967.strikingly.com/#_4" data-reactid="31"><span class="s-font-body" data-reactid="32">主辦單位</span></a></li><li data-reactid="33"><a class="s-nav-item" href="http://site-932935-101-4967.strikingly.com/#_5" data-reactid="34"><span class="s-font-body" data-reactid="35">聯絡我們</span></a></li><li data-reactid="36"><a class="s-nav-item" href="http://site-932935-101-4967.strikingly.com/#_6" data-reactid="37"><span class="s-font-body" data-reactid="38">贊助</span></a></li></span><span data-reactid="39"><li id="s-ecommerce-nav-shopping-cart-wrapper" class="s-ecommerce-nav-shopping-cart-wrapper hidden" data-reactid="40"></li></span></ul></div><div class="power-container" data-reactid="41"><div class="power" id="navbar-top-button" data-reactid="42"><div class="s-component s-image" data-reactid="43"><span data-reactid="44"><div class="s-component-content" data-reactid="45"><div data-reactid="46"><!-- react-text: 47 -->
+  <!-- /react-text --><img src="./index_files/power.png" alt="" title="" data-description="" data-reactid="48"><!-- react-text: 49 -->
+<!-- /react-text --></div></div></span></div></div></div></div></div></div><div id="header-spacer" data-reactid="50" style="display: block; height: 87px;"></div></div><div class="s-navbar-container" data-reactid="51"><div class="navbar-drawer-bar strikingly-nav-transition" data-reactid="52"><div class="drawer-container" data-reactid="53"><a class="navbar" href="javascript:void(0);" data-reactid="54"><div class="navbar-icons" data-reactid="55"><span data-reactid="56"></span><span data-reactid="57"></span><span data-reactid="58"></span></div></a><div id="s-mobile-shopping-cart-new" data-reactid="59"></div><div class="navbar-drawer-title-container" data-reactid="60"></div></div></div><div id="navbar-drawer-mask" data-reactid="61"></div><div class="navbar-drawer strikingly-drawer strikingly-nav-transition" data-reactid="62"><ul id="nav-drawer-list" data-reactid="63"><span data-reactid="64"><li style="display:none;" data-reactid="65"><a class="navbar-drawer-item s-font-body" href="http://site-932935-101-4967.strikingly.com/#1" data-reactid="66">十資無畏</a></li></span><span data-reactid="67"><li data-reactid="68"><a class="navbar-drawer-item s-font-body" href="http://site-932935-101-4967.strikingly.com/#2" data-reactid="69">活動行程</a></li></span><span data-reactid="70"><li data-reactid="71"><a class="navbar-drawer-item s-font-body" href="http://site-932935-101-4967.strikingly.com/#3" data-reactid="72">教學內容</a></li></span><span data-reactid="73"><li data-reactid="74"><a class="navbar-drawer-item s-font-body" href="http://site-932935-101-4967.strikingly.com/#4" data-reactid="75">主辦單位</a></li></span><span data-reactid="76"><li data-reactid="77"><a class="navbar-drawer-item s-font-body" href="http://site-932935-101-4967.strikingly.com/#5" data-reactid="78">聯絡我們</a></li></span><span data-reactid="79"><li data-reactid="80"><a class="navbar-drawer-item s-font-body" href="http://site-932935-101-4967.strikingly.com/#6" data-reactid="81">贊助</a></li></span><li class="logo" data-reactid="82"><a class="logo" href="https://www.strikingly.com/?ref=logo&amp;permalink=site-932935-101-4967&amp;m=1" target="_blank" data-reactid="83"><div class="msg" data-reactid="84">Powered By</div><img src="./index_files/logo-small-2.png" style="height:28px;" alt="Strikingly" data-reactid="85"></a></li></ul></div><div class="mobile-actions strikingly-nav-transition" data-reactid="86" style="height: 172px;"><ul id="mobile-action-list" data-reactid="87"><!-- react-empty: 88 --></ul></div></div><ul class="slides s-page-1" data-reactid="89"><li class="slide s-section-1" id="section-f_2dc8cc04-8420-45ff-878b-0da8d59585ad" data-reactid="90"><div class="waypoint" data-reactid="91"></div><a class="section-anchor" data-reactid="92" style="top: -87px;"></a><div data-reactid="93"><div data-reactid="94"><!-- react-text: 95 -->
+    <!-- /react-text --><div class="s-bg-image s-bg-light-text s-new-title-section s-section s-section-full  transition" style="background-repeat: no-repeat; background-size: cover; background-color: transparent; background-position: 50% 50%; background-image: url(&quot;https://uploads.strikinglycdn.com/static/backgrounds/cityscape/158.jpg&quot;); padding-top: 100px; padding-bottom: 100px;" data-reactid="96"><!-- react-text: 97 -->
+  <!-- /react-text --><div class="container" data-reactid="98"><div class="sixteen columns" data-reactid="99"><!-- react-text: 100 --><!-- /react-text --><div class="media-wrapper " data-reactid="101"><div class="s-component s-media " data-reactid="102"><span data-reactid="103"><div class="s-component-content" data-reactid="104"><div data-reactid="105"><!-- react-text: 106 -->
+  <!-- /react-text --><img src="./index_files/1be4eef3-1c88-4ea3-9a27-0a1cfdfc8599_f4otdt.png" alt="" title="" data-description="" data-reactid="107"><!-- react-text: 108 -->
+<!-- /react-text --></div></div></span></div></div><div class="s-title-group  " data-reactid="109"><div class="s-subtitle" data-reactid="110"><div class="s-component s-text" data-reactid="111"><h4 class="s-component-content s-font-heading" data-reactid="112"><p>2016 十校電資聯合寒訓</p></h4></div></div><div class="s-title has-fresh-line" data-reactid="113"><div class="s-component s-text" data-reactid="114"><h1 class="s-component-content s-font-title" data-reactid="115"><p>十資無畏</p></h1></div></div></div><div class="s-button-group " data-reactid="116"><div class="s-button s-component" data-reactid="117"><span data-reactid="118"><div class="s-component-content" data-reactid="119"><a class="s-common-button s-font-body s-action-button" href="https://goo.gl/forms/PESVo4oYXbf2ZbaH2" data-component="button" target="_self" data-reactid="120">點我報名</a></div></span></div></div></div></div><!-- react-text: 121 -->
+<!-- /react-text --></div><!-- react-text: 122 -->
+  <!-- /react-text --></div></div></li><li class="slide s-section-2" id="section-f_f268f5dc-7d38-4c07-a182-35663ff419c8" data-reactid="123"><div class="waypoint" data-reactid="124"></div><a class="section-anchor" data-reactid="125" style="top: -66px;"></a><div data-reactid="126"><div data-reactid="127"><!-- react-text: 128 -->
+    <!-- /react-text --><div class="s-new-media-section s-section s-media-section transition" data-reactid="129"><div class="container" data-reactid="130"><div class="columns sixteen" data-reactid="131"><div class="s-title-group  " data-reactid="132"><div class="s-title has-fresh-line" data-reactid="133"><div class="s-component s-text" data-reactid="134"><h2 class="s-component-content s-font-title" data-reactid="135"><p>活動行程</p></h2></div></div><div class="s-subtitle" data-reactid="136"><div class="s-component s-text" data-reactid="137"><h4 class="s-component-content s-font-heading" data-reactid="138"><p><em>1/23 - 1/25</em></p></h4></div></div></div></div><!-- react-text: 139 -->
+    <!-- /react-text --><div class="s-mh s-layout-normal s-repeatable" data-reactid="140"><div data-reactid="141"><div data-sorting-index="0" class="s-repeatable-item s-last-row" data-reactid="142"><div class="clearfix" data-reactid="143"><div class="fourteen columns offset-one  center" data-reactid="144"><div class="s-item-media-wrapper s-mhi " data-reactid="145"><div class="s-item-media-group" data-reactid="146"><div class="s-component s-media " data-reactid="147"><span data-reactid="148"><div class="s-component-content" data-reactid="149"><div data-reactid="150"><!-- react-text: 151 -->
+  <!-- /react-text --><div class="s-ratio-box" style="max-width:610px;max-height:478px;" data-reactid="152"><div class="s-ratio-fill" style="padding-bottom:78.36%;" data-reactid="153"></div><div data-reactid="154"><img alt="" title="" data-description="" width="610" height="478" src="./index_files/擷取_ck6jvf.png" class="lazyautosizes lazyloaded" data-src="//res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_9000,w_1200,f_auto/v1/932935/%E6%93%B7%E5%8F%96_ck6jvf.png" data-sizes="auto" data-reactid="155" sizes="610px"></div></div><!-- react-text: 156 -->
+<!-- /react-text --></div></div></span></div></div></div></div></div></div></div></div><!-- react-text: 157 -->
+  <!-- /react-text --></div></div><!-- react-text: 158 -->
+  <!-- /react-text --></div></div></li><li class="slide s-section-3" id="section-f_c8cf4e19-de1d-4779-9eec-c537b33d54c8" data-reactid="159"><div class="waypoint" data-reactid="160"></div><a class="section-anchor" data-reactid="161" style="top: -66px;"></a><div data-reactid="162"><div data-reactid="163"><!-- react-text: 164 -->
+    <!-- /react-text --><div class="s-new-media-section s-section s-rows-section transition" data-reactid="165"><div class="container" data-reactid="166"><div class="columns sixteen" data-reactid="167"><div class="s-title-group  " data-reactid="168"><div class="s-title has-fresh-line" data-reactid="169"><div class="s-component s-text" data-reactid="170"><h2 class="s-component-content s-font-title" data-reactid="171"><p>教學內容</p></h2></div></div><div class="s-subtitle" data-reactid="172"><div class="s-component s-text" data-reactid="173"><h4 class="s-component-content s-font-heading" data-reactid="174"><p>無所不在的互聯網</p></h4></div></div></div></div><!-- react-text: 175 -->
+    <!-- /react-text --><div class="s-media-right s-layout-mediaRight s-repeatable" data-reactid="176"><div data-reactid="177"><div data-sorting-index="0" class="s-repeatable-item" data-reactid="178"><div class="clearfix" data-reactid="179"><div class="" data-reactid="180"><div class="s-item-media-wrapper five columns offset-one s-right-in-row right" data-reactid="181"><div class="s-item-media-group" data-reactid="182"><div class="s-component s-media " data-reactid="183"><span data-reactid="184"><div class="s-component-content" data-reactid="185"><div data-reactid="186"><!-- react-text: 187 -->
+  <!-- /react-text --><div class="s-ratio-box" style="max-width:600px;max-height:533px;" data-reactid="188"><div class="s-ratio-fill" style="padding-bottom:88.83%;" data-reactid="189"></div><div data-reactid="190"><img alt="" title="" data-description="" width="600" height="533" src="./index_files/9812494_orig_c8l9jp.jpg" class="lazyautosizes lazyloaded" data-src="//res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_1440,w_720,f_auto,q_90/v1/932935/9812494_orig_c8l9jp.jpg" data-sizes="auto" data-reactid="191" sizes="269px"></div></div><!-- react-text: 192 -->
+<!-- /react-text --></div></div></span></div></div></div><div class="nine columns s-left-in-row right" data-reactid="193"><div class="s-item-text-group half-offset-right" data-reactid="194"><div class="s-item-title" data-reactid="195"><div class="s-component s-text" data-reactid="196"><h3 class="s-component-content s-font-heading" data-reactid="197"><p><strong>IoT的實作與相關應用</strong></p></h3></div></div><div class="s-item-subtitle" data-reactid="198"><div class="s-component s-text" data-reactid="199"><h6 class="s-component-content s-font-body" data-reactid="200"><p>講師：嘉義高中 陳贊旭</p></h6></div></div><div class="s-item-text" data-reactid="201"><div class="s-component s-text" data-reactid="202"></div></div><div class="" data-reactid="203"></div></div></div></div></div></div><div data-sorting-index="1" class="s-repeatable-item" data-reactid="204"><div class="clearfix" data-reactid="205"><div class="" data-reactid="206"><div class="s-item-media-wrapper five columns offset-one s-right-in-row right" data-reactid="207"><div class="s-item-media-group" data-reactid="208"><div class="s-component s-media " data-reactid="209"><span data-reactid="210"><div class="s-component-content" data-reactid="211"><div data-reactid="212"><!-- react-text: 213 -->
+  <!-- /react-text --><div class="s-ratio-box" style="max-width:720px;max-height:481px;" data-reactid="214"><div class="s-ratio-fill" style="padding-bottom:66.81%;" data-reactid="215"></div><div data-reactid="216"><img alt="" title="" data-description="" width="720" height="481" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="lazyload " data-src="//res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_1440,w_720,f_auto,q_90/v1/932935/password_agzfrc.jpg" data-sizes="auto" data-reactid="217"></div></div><!-- react-text: 218 -->
+<!-- /react-text --></div></div></span></div></div></div><div class="nine columns s-left-in-row right" data-reactid="219"><div class="s-item-text-group half-offset-right" data-reactid="220"><div class="s-item-title" data-reactid="221"><div class="s-component s-text" data-reactid="222"><h3 class="s-component-content s-font-heading" data-reactid="223"><p><strong>密碼的意義</strong></p></h3></div></div><div class="s-item-subtitle" data-reactid="224"><div class="s-component s-text" data-reactid="225"><h6 class="s-component-content s-font-body" data-reactid="226"><p>講師：臺南女中 凃佩妤</p></h6></div></div><div class="s-item-text" data-reactid="227"><div class="s-component s-text" data-reactid="228"></div></div><div class="" data-reactid="229"></div></div></div></div></div></div><div data-sorting-index="2" class="s-repeatable-item" data-reactid="230"><div class="clearfix" data-reactid="231"><div class="" data-reactid="232"><div class="s-item-media-wrapper five columns offset-one s-right-in-row right" data-reactid="233"><div class="s-item-media-group" data-reactid="234"><div class="s-component s-media " data-reactid="235"><span data-reactid="236"><div class="s-component-content" data-reactid="237"><div data-reactid="238"><!-- react-text: 239 -->
+  <!-- /react-text --><div class="s-ratio-box" style="max-width:599px;max-height:423px;" data-reactid="240"><div class="s-ratio-fill" style="padding-bottom:70.62%;" data-reactid="241"></div><div data-reactid="242"><img alt="" title="" data-description="" width="599" height="423" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="lazyload " data-src="//res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_1440,w_720,f_auto,q_90/v1/932935/C5-10_123DDesign_fbyy7c.jpg" data-sizes="auto" data-reactid="243"></div></div><!-- react-text: 244 -->
+<!-- /react-text --></div></div></span></div></div></div><div class="nine columns s-left-in-row right" data-reactid="245"><div class="s-item-text-group half-offset-right" data-reactid="246"><div class="s-item-title" data-reactid="247"><div class="s-component s-text" data-reactid="248"><h3 class="s-component-content s-font-heading" data-reactid="249"><p><strong>3D繪圖</strong></p></h3></div></div><div class="s-item-subtitle" data-reactid="250"><div class="s-component s-text" data-reactid="251"><h6 class="s-component-content s-font-body" data-reactid="252"><p>講師：臺大資工 涂家銘</p></h6></div></div><div class="s-item-text" data-reactid="253"><div class="s-component s-text" data-reactid="254"></div></div><div class="" data-reactid="255"></div></div></div></div></div></div><div data-sorting-index="3" class="s-repeatable-item" data-reactid="256"><div class="clearfix" data-reactid="257"><div class="" data-reactid="258"><div class="s-item-media-wrapper five columns offset-one s-right-in-row right" data-reactid="259"><div class="s-item-media-group" data-reactid="260"><div class="s-component s-media " data-reactid="261"><span data-reactid="262"><div class="s-component-content" data-reactid="263"><div data-reactid="264"><!-- react-text: 265 -->
+  <!-- /react-text --><div class="s-ratio-box" style="max-width:388px;max-height:388px;" data-reactid="266"><div class="s-ratio-fill" style="padding-bottom:100.00%;" data-reactid="267"></div><div data-reactid="268"><img alt="" title="" data-description="" width="388" height="388" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="lazyload " data-src="//res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_1440,w_720,f_auto/v1/932935/web_qmfcpi.jpg" data-sizes="auto" data-reactid="269"></div></div><!-- react-text: 270 -->
+<!-- /react-text --></div></div></span></div></div></div><div class="nine columns s-left-in-row right" data-reactid="271"><div class="s-item-text-group half-offset-right" data-reactid="272"><div class="s-item-title" data-reactid="273"><div class="s-component s-text" data-reactid="274"><h3 class="s-component-content s-font-heading" data-reactid="275"><p><strong>Web基礎相關知識與進階</strong></p></h3></div></div><div class="s-item-subtitle" data-reactid="276"><div class="s-component s-text" data-reactid="277"><h6 class="s-component-content s-font-body" data-reactid="278"><p>講師：新竹高中 蕭于傑</p></h6></div></div><div class="s-item-text" data-reactid="279"><div class="s-component s-text" data-reactid="280"></div></div><div class="" data-reactid="281"></div></div></div></div></div></div><div data-sorting-index="4" class="s-repeatable-item" data-reactid="282"><div class="clearfix" data-reactid="283"><div class="" data-reactid="284"><div class="s-item-media-wrapper five columns offset-one s-right-in-row right" data-reactid="285"><div class="s-item-media-group" data-reactid="286"><div class="s-component s-media " data-reactid="287"><span data-reactid="288"><div class="s-component-content" data-reactid="289"><div data-reactid="290"><!-- react-text: 291 -->
+  <!-- /react-text --><div class="s-ratio-box" style="max-width:720px;max-height:318px;" data-reactid="292"><div class="s-ratio-fill" style="padding-bottom:44.17%;" data-reactid="293"></div><div data-reactid="294"><img alt="" title="" data-description="" width="720" height="318" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="lazyload " data-src="//res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_1440,w_720,f_auto,q_90/v1/932935/security_su42bu.png" data-sizes="auto" data-reactid="295"></div></div><!-- react-text: 296 -->
+<!-- /react-text --></div></div></span></div></div></div><div class="nine columns s-left-in-row right" data-reactid="297"><div class="s-item-text-group half-offset-right" data-reactid="298"><div class="s-item-title" data-reactid="299"><div class="s-component s-text" data-reactid="300"><h3 class="s-component-content s-font-heading" data-reactid="301"><p><strong>資訊安全</strong></p></h3></div></div><div class="s-item-subtitle" data-reactid="302"><div class="s-component s-text" data-reactid="303"><h6 class="s-component-content s-font-body" data-reactid="304"><p>講師：嘉義高中 楊志璿</p></h6></div></div><div class="s-item-text" data-reactid="305"><div class="s-component s-text" data-reactid="306"></div></div><div class="" data-reactid="307"></div></div></div></div></div></div><div data-sorting-index="5" class="s-repeatable-item s-last-row" data-reactid="308"><div class="clearfix" data-reactid="309"><div class="" data-reactid="310"><div class="s-item-media-wrapper five columns offset-one s-right-in-row right" data-reactid="311"><div class="s-item-media-group" data-reactid="312"><div class="s-component s-media " data-reactid="313"><span data-reactid="314"><div class="s-component-content" data-reactid="315"><div data-reactid="316"><!-- react-text: 317 -->
+  <!-- /react-text --><div class="s-ratio-box" style="max-width:720px;max-height:301px;" data-reactid="318"><div class="s-ratio-fill" style="padding-bottom:41.81%;" data-reactid="319"></div><div data-reactid="320"><img alt="" title="" data-description="" width="720" height="301" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="lazyload " data-src="//res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_1440,w_720,f_auto/v1/932935/git_b8jlh9.png" data-sizes="auto" data-reactid="321"></div></div><!-- react-text: 322 -->
+<!-- /react-text --></div></div></span></div></div></div><div class="nine columns s-left-in-row right" data-reactid="323"><div class="s-item-text-group half-offset-right" data-reactid="324"><div class="s-item-title" data-reactid="325"><div class="s-component s-text" data-reactid="326"><h3 class="s-component-content s-font-heading" data-reactid="327"><p><strong>GIT</strong></p></h3></div></div><div class="s-item-subtitle" data-reactid="328"><div class="s-component s-text" data-reactid="329"><h6 class="s-component-content s-font-body" data-reactid="330"><p>講師：新竹高中 蔡奇夆</p></h6></div></div><div class="s-item-text" data-reactid="331"><div class="s-component s-text" data-reactid="332"></div></div><div class="" data-reactid="333"></div></div></div></div></div></div></div></div><!-- react-text: 334 -->
+  <!-- /react-text --></div></div><!-- react-text: 335 -->
+  <!-- /react-text --></div></div></li><li class="slide s-section-4" id="section-f_c100f3a5-7f80-4069-b971-03681234a3f7" data-reactid="336"><div class="waypoint" data-reactid="337"></div><a class="section-anchor" data-reactid="338" style="top: -66px;"></a><div class="s-icons-section s-section transition" data-reactid="339"><div class="container" data-reactid="340"><div class="columns sixteen" data-reactid="341"><div class="s-title-group  " data-reactid="342"><div class="s-title has-fresh-line" data-reactid="343"><div class="s-component s-text" data-reactid="344"><h2 class="s-component-content s-font-title" data-reactid="345"><p>主辦單位</p></h2></div></div><div class="s-subtitle" data-reactid="346"><div class="s-component s-text" data-reactid="347"><h4 class="s-component-content s-font-heading" data-reactid="348"><p>十校電資社團</p></h4></div></div></div></div><div class="" data-reactid="349"><!-- react-text: 350 -->
+      <!-- /react-text --><div class="s-mh s-repeatable" data-reactid="351"><div data-reactid="352"><div data-sorting-index="0" class="three columns half-fixed no-float s-repeatable-item" data-reactid="353"><div class="s-item-media-group s-mhi" data-reactid="354" style="min-height: 151px;"><div class="s-component s-image" data-reactid="355"><span data-reactid="356"><div class="s-component-content" data-reactid="357"><div data-reactid="358"><!-- react-text: 359 -->
+  <!-- /react-text --><div class="s-ratio-box" style="max-width:342px;max-height:342px;" data-reactid="360"><div class="s-ratio-fill" style="padding-bottom:100.00%;" data-reactid="361"></div><div data-reactid="362"><img alt="" title="" data-description="" width="342" height="342" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="lazyload " data-src="//res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_960,w_480,f_auto/v1/932935/57f558dd-7181-4209-a40d-be1449216449_ympwcw.jpg" data-sizes="auto" data-reactid="363"></div></div><!-- react-text: 364 -->
+<!-- /react-text --></div></div></span></div></div><div class="s-item-text-group" data-reactid="365"><div class="s-component s-text" data-reactid="366"><div class="s-component-content s-font-body" data-reactid="367"><p>武陵高中資訊研究社</p><p>WLCSC</p></div></div></div></div><div data-sorting-index="1" class="three columns half-fixed no-float s-repeatable-item" data-reactid="368"><div class="s-item-media-group s-mhi" data-reactid="369" style="min-height: 151px;"><div class="s-component s-image" data-reactid="370"><span data-reactid="371"><div class="s-component-content" data-reactid="372"><div data-reactid="373"><!-- react-text: 374 -->
+  <!-- /react-text --><div class="s-ratio-box" style="max-width:480px;max-height:480px;" data-reactid="375"><div class="s-ratio-fill" style="padding-bottom:100.00%;" data-reactid="376"></div><div data-reactid="377"><img alt="" title="" data-description="" width="480" height="480" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="lazyload " data-src="//res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_960,w_480,f_auto/v1/932935/csdc2_xqldoi.png" data-sizes="auto" data-reactid="378"></div></div><!-- react-text: 379 -->
+<!-- /react-text --></div></div></span></div></div><div class="s-item-text-group" data-reactid="380"><div class="s-component s-text" data-reactid="381"><div class="s-component-content s-font-body" data-reactid="382"><p>新竹高中軟體研究社</p><p>CSDC</p></div></div></div></div><div data-sorting-index="2" class="three columns half-fixed no-float s-repeatable-item" data-reactid="383"><div class="s-item-media-group s-mhi" data-reactid="384" style="min-height: 151px;"><div class="s-component s-image" data-reactid="385"><span data-reactid="386"><div class="s-component-content" data-reactid="387"><div data-reactid="388"><!-- react-text: 389 -->
+  <!-- /react-text --><div class="s-ratio-box" style="max-width:480px;max-height:480px;" data-reactid="390"><div class="s-ratio-fill" style="padding-bottom:100.00%;" data-reactid="391"></div><div data-reactid="392"><img alt="" title="" data-description="" width="480" height="480" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="lazyload " data-src="//res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_960,w_480,f_auto,q_90/v1/932935/cycc_xroxop.jpg" data-sizes="auto" data-reactid="393"></div></div><!-- react-text: 394 -->
+<!-- /react-text --></div></div></span></div></div><div class="s-item-text-group" data-reactid="395"><div class="s-component s-text" data-reactid="396"><div class="s-component-content s-font-body" data-reactid="397"><p>嘉義高中電腦社</p><p>CYCC</p></div></div></div></div><div data-sorting-index="3" class="three columns half-fixed no-float s-repeatable-item" data-reactid="398"><div class="s-item-media-group s-mhi" data-reactid="399" style="min-height: 151px;"><div class="s-component s-image" data-reactid="400"><span data-reactid="401"><div class="s-component-content" data-reactid="402"><div data-reactid="403"><!-- react-text: 404 -->
+  <!-- /react-text --><div class="s-ratio-box" style="max-width:480px;max-height:480px;" data-reactid="405"><div class="s-ratio-fill" style="padding-bottom:100.00%;" data-reactid="406"></div><div data-reactid="407"><img alt="" title="" data-description="" width="480" height="480" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="lazyload " data-src="//res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_960,w_480,f_auto,q_90/v1/932935/cygprc_fv2mai.jpg" data-sizes="auto" data-reactid="408"></div></div><!-- react-text: 409 -->
+<!-- /react-text --></div></div></span></div></div><div class="s-item-text-group" data-reactid="410"><div class="s-component s-text" data-reactid="411"><div class="s-component-content s-font-body" data-reactid="412"><p>嘉義女中程式研究社</p><p>CYGPRC</p></div></div></div></div><div data-sorting-index="4" class="three columns half-fixed no-float s-repeatable-item" data-reactid="413"><div class="s-item-media-group s-mhi" data-reactid="414" style="min-height: 151px;"><div class="s-component s-image" data-reactid="415"><span data-reactid="416"><div class="s-component-content" data-reactid="417"><div data-reactid="418" class="s-mh-nudge" style="padding-top: 2px;"><!-- react-text: 419 -->
+  <!-- /react-text --><div class="s-ratio-box" style="max-width:480px;max-height:468px;" data-reactid="420"><div class="s-ratio-fill" style="padding-bottom:97.50%;" data-reactid="421"></div><div data-reactid="422"><img alt="" title="" data-description="" width="480" height="468" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="lazyload " data-src="//res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_960,w_480,f_auto,q_90/v1/932935/hkhs2_pvkgy8.png" data-sizes="auto" data-reactid="423"></div></div><!-- react-text: 424 -->
+<!-- /react-text --></div></div></span></div></div><div class="s-item-text-group" data-reactid="425"><div class="s-component s-text" data-reactid="426"><div class="s-component-content s-font-body" data-reactid="427"><p>興國高中研究</p><p>特殊機器人應用社</p><p>RLC</p></div></div></div></div><div data-sorting-index="5" class="three columns half-fixed no-float s-repeatable-item" data-reactid="428"><div class="s-item-media-group s-mhi" data-reactid="429" style="min-height: 153px;"><div class="s-component s-image" data-reactid="430"><span data-reactid="431"><div class="s-component-content" data-reactid="432"><div data-reactid="433" class="s-mh-nudge" style="padding-top: 1px;"><!-- react-text: 434 -->
+  <!-- /react-text --><div class="s-ratio-box" style="max-width:400px;max-height:400px;" data-reactid="435"><div class="s-ratio-fill" style="padding-bottom:100.00%;" data-reactid="436"></div><div data-reactid="437"><img alt="" title="" data-description="" width="400" height="400" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="lazyload " data-src="//res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_960,w_480,f_auto,q_90/v1/932935/tnssh_r0a3nn.png" data-sizes="auto" data-reactid="438"></div></div><!-- react-text: 439 -->
+<!-- /react-text --></div></div></span></div></div><div class="s-item-text-group" data-reactid="440"><div class="s-component s-text" data-reactid="441"><div class="s-component-content s-font-body" data-reactid="442"><p>臺南二中資訊研究社</p><p>CISS</p></div></div></div></div><div data-sorting-index="6" class="three columns half-fixed no-float s-repeatable-item" data-reactid="443"><div class="s-item-media-group s-mhi" data-reactid="444" style="min-height: 153px;"><div class="s-component s-image" data-reactid="445"><span data-reactid="446"><div class="s-component-content" data-reactid="447"><div data-reactid="448" class="s-mh-nudge" style="padding-top: 1px;"><!-- react-text: 449 -->
+  <!-- /react-text --><div class="s-ratio-box" style="max-width:251px;max-height:251px;" data-reactid="450"><div class="s-ratio-fill" style="padding-bottom:100.00%;" data-reactid="451"></div><div data-reactid="452"><img alt="" title="" data-description="" width="251" height="251" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="lazyload " data-src="//res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_960,w_480,f_auto/v1/932935/tfcis_wpysw8.png" data-sizes="auto" data-reactid="453"></div></div><!-- react-text: 454 -->
+<!-- /react-text --></div></div></span></div></div><div class="s-item-text-group" data-reactid="455"><div class="s-component s-text" data-reactid="456"><div class="s-component-content s-font-body" data-reactid="457"><p>臺南一中資訊社</p><p>TFcis</p></div></div></div></div><div data-sorting-index="7" class="three columns half-fixed no-float s-repeatable-item" data-reactid="458"><div class="s-item-media-group s-mhi" data-reactid="459" style="min-height: 153px;"><div class="s-component s-image" data-reactid="460"><span data-reactid="461"><div class="s-component-content" data-reactid="462"><div data-reactid="463" class="s-mh-nudge" style="padding-top: 8px;"><!-- react-text: 464 -->
+  <!-- /react-text --><div class="s-ratio-box" style="max-width:150px;max-height:137px;" data-reactid="465"><div class="s-ratio-fill" style="padding-bottom:91.33%;" data-reactid="466"></div><div data-reactid="467"><img alt="" title="" data-description="" width="150" height="137" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="lazyload " data-src="//res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_960,w_480,f_auto/v1/932935/tngs_dxmohw.png" data-sizes="auto" data-reactid="468"></div></div><!-- react-text: 469 -->
+<!-- /react-text --></div></div></span></div></div><div class="s-item-text-group" data-reactid="470"><div class="s-component s-text" data-reactid="471"><div class="s-component-content s-font-body" data-reactid="472"><p>臺南女中資訊研究社</p><p>TGIRC</p></div></div></div></div><div data-sorting-index="8" class="three columns half-fixed no-float s-repeatable-item s-last-row" data-reactid="473"><div class="s-item-media-group s-mhi" data-reactid="474" style="min-height: 153px;"><div class="s-component s-image" data-reactid="475"><span data-reactid="476"><div class="s-component-content" data-reactid="477"><div data-reactid="478" class="s-mh-nudge" style="padding-top: 9px;"><!-- react-text: 479 -->
+  <!-- /react-text --><div class="s-ratio-box" style="max-width:480px;max-height:430px;" data-reactid="480"><div class="s-ratio-fill" style="padding-bottom:89.58%;" data-reactid="481"></div><div data-reactid="482"><img alt="" title="" data-description="" width="480" height="430" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="lazyload " data-src="//res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_960,w_480,f_auto,q_90/v1/932935/ccirs_wnfeee.png" data-sizes="auto" data-reactid="483"></div></div><!-- react-text: 484 -->
+<!-- /react-text --></div></div></span></div></div><div class="s-item-text-group" data-reactid="485"><div class="s-component s-text" data-reactid="486"><div class="s-component-content s-font-body" data-reactid="487"><p>家齊高中資訊研究社</p><p>CCIRS</p></div></div></div></div><div data-sorting-index="9" class="three columns half-fixed no-float s-repeatable-item s-last-row" data-reactid="488"><div class="s-item-media-group s-mhi" data-reactid="489" style="min-height: 153px;"><div class="s-component s-image" data-reactid="490"><span data-reactid="491"><div class="s-component-content" data-reactid="492"><div data-reactid="493" class="s-mh-nudge" style=""><!-- react-text: 494 -->
+  <!-- /react-text --><div class="s-ratio-box" style="max-width:180px;max-height:183px;" data-reactid="495"><div class="s-ratio-fill" style="padding-bottom:101.67%;" data-reactid="496"></div><div data-reactid="497"><img alt="" title="" data-description="" width="180" height="183" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="lazyload " data-src="//res.cloudinary.com/hrscywv4p/image/upload/c_limit,h_960,w_480,f_auto/v1/932935/kghs_htuema.gif" data-sizes="auto" data-reactid="498"></div></div><!-- react-text: 499 -->
+<!-- /react-text --></div></div></span></div></div><div class="s-item-text-group" data-reactid="500"><div class="s-component s-text" data-reactid="501"><div class="s-component-content s-font-body" data-reactid="502"><p>高雄女中資訊社</p><p>I<sup>2</sup>TRC<sup>2</sup></p></div></div></div></div></div></div><!-- react-text: 503 -->
+    <!-- /react-text --></div></div></div></li><li class="slide s-section-5" id="section-f_e6708fe0-3dd8-4f7c-a8ff-90f30bec8d7b" data-reactid="504"><div class="waypoint" data-reactid="505"></div><a class="section-anchor" data-reactid="506" style="top: -66px;"></a><div data-reactid="507"><div data-reactid="508"><!-- react-text: 509 -->
+    <!-- /react-text --><div class="s-new-media-section s-section s-columns-section transition" data-reactid="510"><div class="container" data-reactid="511"><div class="columns sixteen" data-reactid="512"><div class="s-title-group  " data-reactid="513"><div class="s-title has-fresh-line" data-reactid="514"><div class="s-component s-text" data-reactid="515"><h2 class="s-component-content s-font-title" data-reactid="516"><p>聯絡我們</p></h2></div></div></div></div><!-- react-text: 517 -->
+    <!-- /react-text --><div class="s-mh  s-repeatable" data-reactid="518"><div data-reactid="519"><div data-sorting-index="0" class="four columns no-float s-repeatable-item" data-reactid="520"><div class="clearfix" data-reactid="521"><div class="" data-reactid="522"><div class="s-item-media-wrapper s-mhi " data-reactid="523" style="min-height: 210px;"><div class="s-item-media-group" data-reactid="524"><div class="s-component s-media " data-reactid="525"><span data-reactid="526"><div class="s-component-content" data-reactid="527"><div data-reactid="528"><!-- react-text: 529 -->
+  <!-- /react-text --><div class="s-ratio-box" style="max-width:320px;max-height:320px;" data-reactid="530"><div class="s-ratio-fill" style="padding-bottom:100.00%;" data-reactid="531"></div><div data-reactid="532"><img alt="" title="" data-description="" width="320" height="320" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="lazyload " data-src="//res.cloudinary.com/hrscywv4p/image/upload/c_fill,h_320,w_320,f_auto,g_faces:center,q_90/v1/932935/15194596_1245914095482931_6026612548781055274_o_r9udlx.jpg" data-sizes="auto" data-reactid="533"></div></div><!-- react-text: 534 -->
+<!-- /react-text --></div></div></span></div></div></div><div class="" data-reactid="535"><div class="s-item-text-group " data-reactid="536"><div class="s-item-title" data-reactid="537"><div class="s-component s-text" data-reactid="538"><h3 class="s-component-content s-font-heading" data-reactid="539"><p>總召 沈郁哲</p></h3></div></div><div class="s-item-subtitle" data-reactid="540"><div class="s-component s-text" data-reactid="541"><h6 class="s-component-content s-font-body" data-reactid="542"><p>0978-645-044</p></h6></div></div><div class="s-item-text" data-reactid="543"><div class="s-component s-text" data-reactid="544"></div></div><div class="" data-reactid="545"></div></div></div></div></div></div><div data-sorting-index="1" class="four columns no-float s-repeatable-item" data-reactid="546"><div class="clearfix" data-reactid="547"><div class="" data-reactid="548"><div class="s-item-media-wrapper s-mhi " data-reactid="549" style="min-height: 210px;"><div class="s-item-media-group" data-reactid="550"><div class="s-component s-media " data-reactid="551"><span data-reactid="552"><div class="s-component-content" data-reactid="553"><div data-reactid="554"><!-- react-text: 555 -->
+  <!-- /react-text --><div class="s-ratio-box" style="max-width:320px;max-height:320px;" data-reactid="556"><div class="s-ratio-fill" style="padding-bottom:100.00%;" data-reactid="557"></div><div data-reactid="558"><img alt="" title="" data-description="" width="320" height="320" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="lazyload " data-src="//res.cloudinary.com/hrscywv4p/image/upload/c_fill,h_320,w_320,f_auto,g_faces:center/v1/932935/be423407-ccbf-45af-b8ec-e1330fabcd7b_al3r3i.jpg" data-sizes="auto" data-reactid="559"></div></div><!-- react-text: 560 -->
+<!-- /react-text --></div></div></span></div></div></div><div class="" data-reactid="561"><div class="s-item-text-group " data-reactid="562"><div class="s-item-title" data-reactid="563"><div class="s-component s-text" data-reactid="564"><h3 class="s-component-content s-font-heading" data-reactid="565"><p>副召 吳巧心</p></h3></div></div><div class="s-item-subtitle" data-reactid="566"><div class="s-component s-text" data-reactid="567"><h6 class="s-component-content s-font-body" data-reactid="568"><p>0978-825-613</p></h6></div></div><div class="s-item-text" data-reactid="569"><div class="s-component s-text" data-reactid="570"></div></div><div class="" data-reactid="571"></div></div></div></div></div></div><div data-sorting-index="2" class="four columns no-float s-repeatable-item" data-reactid="572"><div class="clearfix" data-reactid="573"><div class="" data-reactid="574"><div class="s-item-media-wrapper s-mhi " data-reactid="575" style="min-height: 210px;"><div class="s-item-media-group" data-reactid="576"><div class="s-component s-media " data-reactid="577"><span data-reactid="578"><div class="s-component-content" data-reactid="579"><div data-reactid="580"><!-- react-text: 581 -->
+  <!-- /react-text --><div class="s-ratio-box" style="max-width:320px;max-height:320px;" data-reactid="582"><div class="s-ratio-fill" style="padding-bottom:100.00%;" data-reactid="583"></div><div data-reactid="584"><img alt="" title="" data-description="" width="320" height="320" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="lazyload " data-src="//res.cloudinary.com/hrscywv4p/image/upload/c_fill,h_320,w_320,f_auto,g_faces:center/v1/932935/a6670bb4-697d-41e2-a39e-b9437f23cac1_em1ufp.jpg" data-sizes="auto" data-reactid="585"></div></div><!-- react-text: 586 -->
+<!-- /react-text --></div></div></span></div></div></div><div class="" data-reactid="587"><div class="s-item-text-group " data-reactid="588"><div class="s-item-title" data-reactid="589"><div class="s-component s-text" data-reactid="590"><h3 class="s-component-content s-font-heading" data-reactid="591"><p>副召 陳育靜</p></h3></div></div><div class="s-item-subtitle" data-reactid="592"><div class="s-component s-text" data-reactid="593"><h6 class="s-component-content s-font-body" data-reactid="594"><p>0935-890-524</p></h6></div></div><div class="s-item-text" data-reactid="595"><div class="s-component s-text" data-reactid="596"></div></div><div class="" data-reactid="597"></div></div></div></div></div></div><div data-sorting-index="3" class="four columns no-float s-repeatable-item" data-reactid="598"><div class="clearfix" data-reactid="599"><div class="" data-reactid="600"><div class="s-item-media-wrapper s-mhi " data-reactid="601" style="min-height: 210px;"><div class="s-item-media-group" data-reactid="602"><div class="s-component s-media " data-reactid="603"><span data-reactid="604"><div class="s-component-content" data-reactid="605"><div data-reactid="606"><!-- react-text: 607 -->
+  <!-- /react-text --><div class="s-ratio-box" style="max-width:320px;max-height:320px;" data-reactid="608"><div class="s-ratio-fill" style="padding-bottom:100.00%;" data-reactid="609"></div><div data-reactid="610"><img alt="" title="" data-description="" width="320" height="320" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="lazyload " data-src="//res.cloudinary.com/hrscywv4p/image/upload/c_fill,h_320,w_320,f_auto,g_faces:center,q_90/v1/932935/12968097_1013433675416441_3176640271907066795_o_tthya2.jpg" data-sizes="auto" data-reactid="611"></div></div><!-- react-text: 612 -->
+<!-- /react-text --></div></div></span></div></div></div><div class="" data-reactid="613"><div class="s-item-text-group " data-reactid="614"><div class="s-item-title" data-reactid="615"><div class="s-component s-text" data-reactid="616"><h3 class="s-component-content s-font-heading" data-reactid="617"><p>副召 魏鳴億</p></h3></div></div><div class="s-item-subtitle" data-reactid="618"><div class="s-component s-text" data-reactid="619"><h6 class="s-component-content s-font-body" data-reactid="620"><p>0928-452-817</p></h6></div></div><div class="s-item-text" data-reactid="621"><div class="s-component s-text" data-reactid="622"></div></div><div class="" data-reactid="623"></div></div></div></div></div></div><div data-sorting-index="4" class="four columns no-float s-repeatable-item" data-reactid="624"><div class="clearfix" data-reactid="625"><div class="" data-reactid="626"><div class="s-item-media-wrapper s-mhi " data-reactid="627" style="min-height: 210px;"><div class="s-item-media-group" data-reactid="628"><div class="s-component s-media " data-reactid="629"><span data-reactid="630"><div class="s-component-content" data-reactid="631"><div data-reactid="632"><!-- react-text: 633 -->
+  <!-- /react-text --><div class="s-ratio-box" style="max-width:320px;max-height:320px;" data-reactid="634"><div class="s-ratio-fill" style="padding-bottom:100.00%;" data-reactid="635"></div><div data-reactid="636"><img alt="" title="" data-description="" width="320" height="320" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="lazyload " data-src="https://uploads.strikinglycdn.com/page/images/icons/email-icon.png" data-sizes="auto" data-reactid="637"></div></div><!-- react-text: 638 -->
+<!-- /react-text --></div></div></span></div></div></div><div class="" data-reactid="639"><div class="s-item-text-group " data-reactid="640"><div class="s-item-title" data-reactid="641"><div class="s-component s-text" data-reactid="642"><h3 class="s-component-content s-font-heading" data-reactid="643"><p>聯絡信箱-1</p></h3></div></div><div class="s-item-subtitle" data-reactid="644"><div class="s-component s-text" data-reactid="645"><h6 class="s-component-content s-font-body" data-reactid="646"><p style="text-align: left;"><a href="mailto:unitedwintertrip107@googlegroups.com">unitedwintertrip107@googlegroups.com</a></p></h6></div></div><div class="s-item-text" data-reactid="647"><div class="s-component s-text" data-reactid="648"></div></div><div class="" data-reactid="649"></div></div></div></div></div></div><div data-sorting-index="5" class="four columns no-float s-repeatable-item s-last-row" data-reactid="650"><div class="clearfix" data-reactid="651"><div class="" data-reactid="652"><div class="s-item-media-wrapper s-mhi " data-reactid="653" style="min-height: 210px;"><div class="s-item-media-group" data-reactid="654"><div class="s-component s-media " data-reactid="655"><span data-reactid="656"><div class="s-component-content" data-reactid="657"><div data-reactid="658"><!-- react-text: 659 -->
+  <!-- /react-text --><div class="s-ratio-box" style="max-width:320px;max-height:320px;" data-reactid="660"><div class="s-ratio-fill" style="padding-bottom:100.00%;" data-reactid="661"></div><div data-reactid="662"><img alt="" title="" data-description="" width="320" height="320" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" class="lazyload " data-src="https://assets.strikingly.com/static/icons/brown/email-icon.png" data-sizes="auto" data-reactid="663"></div></div><!-- react-text: 664 -->
+<!-- /react-text --></div></div></span></div></div></div><div class="" data-reactid="665"><div class="s-item-text-group " data-reactid="666"><div class="s-item-title" data-reactid="667"><div class="s-component s-text" data-reactid="668"><h3 class="s-component-content s-font-heading" data-reactid="669"><p>聯絡信箱-2</p></h3></div></div><div class="s-item-subtitle" data-reactid="670"><div class="s-component s-text" data-reactid="671"><h6 class="s-component-content s-font-body" data-reactid="672"><p style="text-align:left"><a href="mailto:unitedwintertrip107@googlegroups.com">contact@unitedwintercamp107.tech</a></p></h6></div></div><div class="s-item-text" data-reactid="673"><div class="s-component s-text" data-reactid="674"></div></div><div class="" data-reactid="675"></div></div></div></div></div></div></div></div><!-- react-text: 676 -->
+  <!-- /react-text --></div></div><!-- react-text: 677 -->
+  <!-- /react-text --></div></div></li><li class="slide s-section-6" id="section-f_d72b4178-1d28-466b-820d-c443a855d43a" data-reactid="678"><div class="waypoint" data-reactid="679"></div><a class="section-anchor" data-reactid="680" style="top: -66px;"></a><div data-reactid="681"><div data-reactid="682"><!-- react-text: 683 -->
+    <!-- /react-text --><div class="s-new-media-section s-section s-rows-section transition" data-reactid="684"><div class="container" data-reactid="685"><div class="columns sixteen" data-reactid="686"><div class="s-title-group s-only-title-group " data-reactid="687"><div class="s-title has-fresh-line" data-reactid="688"><div class="s-component s-text" data-reactid="689"><h2 class="s-component-content s-font-title" data-reactid="690"><p>贊助</p></h2></div></div></div></div><!-- react-text: 691 -->
+    <!-- /react-text --><div class="s-media-right s-layout-mediaRight s-repeatable" data-reactid="692"><div data-reactid="693"></div></div><!-- react-text: 694 -->
+  <!-- /react-text --></div></div><!-- react-text: 695 -->
+  <!-- /react-text --></div></div><div class="waypoint" data-reactid="696"></div></li></ul><!-- react-empty: 697 --><div id="strikingly-tooltip-container" data-reactid="698"> </div><div class="s-footer-section s-section  transition" data-reactid="699"><div class="container s-layout-vertical" data-reactid="700"><div class="columns row sixteen " data-reactid="701"><div data-reactid="702"><div class="s-component s-async-wrapper" data-reactid="703"><div class="s-loading" data-reactid="704"></div><div class="waypoint" data-reactid="705"></div></div></div><div class="s-footer-text" data-reactid="706"><div class="s-component s-text" data-reactid="707"><div class="s-component-content s-font-body" data-reactid="708"><p>© 2016</p></div></div></div></div></div></div><div id="ecommerce-drawer" class="s-category-drawer-wrapper" data-reactid="709"></div><div id="blog-category-drawer" class="s-category-drawer-wrapper" data-reactid="710"></div><div class="s-component s-footer-logo" style="display: none; bottom: -90px; position: fixed;" data-reactid="711"><a class="logo-link" href="https://www.strikingly.com/?ref=logo&amp;permalink=site-932935-101-4967&amp;custom_domain=&amp;utm_campaign=footer_pbs&amp;utm_content=http%3A%2F%2Fsite-932935-101-4967.strikingly.com%2F&amp;utm_medium=user_page&amp;utm_source=footer_logo" data-reactid="712"><!-- react-text: 713 -->
+      <!-- /react-text --><!-- react-text: 714 -->Powered by Strikingly - Best website builder for the mobile age<!-- /react-text --><!-- react-text: 715 -->
+    <!-- /react-text --></a><div class="logo-hover" data-reactid="716"></div><div class="s-footer-logo-tooltip" data-reactid="717"><div class="tooltip-container" data-reactid="718"><div class="tooltip-white" data-reactid="719"><span data-reactid="720">Create your own website with Strikingly</span></div></div></div></div><div class="s-floated-components" data-reactid="721"><div data-reactid="722"><div class="ecommerce-buy-dialog s-edit-modal mobile-mode extend show-copyright" id="ecommerce-buy-dialog" data-reactid="723"><div class="s-async-wrapper s-component" data-reactid="724"><div class="s-loading" data-reactid="725"></div></div><div class="copyright" data-reactid="726"><div data-reactid="727"><div class="powered-by" data-reactid="728">Powered By</div><img src="./index_files/ecommerce-footer-logo.png" data-reactid="729"></div></div></div><div id="donate-dialog" class="donate-dialog s-edit-modal" data-reactid="730"><div class="close-button" data-reactid="731"><h5 data-reactid="732"><a data-reactid="733"> × </a></h5></div><div class="s-component s-donate-panel s-ecommerce-buy" data-reactid="734"><div class="s-donate-form s-form buy-panel" data-reactid="735"><div class="title" data-reactid="736">Donation Info</div><div class="s-form-section" data-reactid="737"><div class="small-title" data-reactid="738">Amount</div><div class="s-form-field amount" data-reactid="739"><input type="text" class="" data-reactid="740"><div class="currency" data-reactid="741">¥</div></div></div><div class="s-form-section" data-reactid="742"><div class="small-title" data-reactid="743">Personal Information (optional)</div><div class="s-form-field-group" data-reactid="744"><div class="s-form-field inline" data-reactid="745"><input type="text" placeholder="Full Name" data-reactid="746"></div><div class="s-form-field inline" data-reactid="747"><input type="text" placeholder="Phone Number" data-reactid="748"></div></div><div class="s-form-field" data-reactid="749"><input type="text" placeholder="Email" data-reactid="750"></div><div class="s-form-field" data-reactid="751"><textarea placeholder="Send us a note" data-reactid="752"></textarea></div></div><div class="s-form-section" data-reactid="753"><div class="small-title" data-reactid="754">Choose Payment Method</div><div data-reactid="755"><div class="payment-method" data-reactid="756"><input type="radio" checked="" name="payment" data-reactid="757"><img src="./index_files/pay_with_alipay.png" data-reactid="758"></div></div></div><div class="bottom" data-reactid="759"><div class="s-btn green" data-reactid="760"><!-- react-text: 761 -->Donate ¥0.00<!-- /react-text --></div></div></div></div><div class="copyright" data-reactid="762"><div data-reactid="763"><div class="powered-by" data-reactid="764">Powered By</div><img src="./index_files/ecommerce-footer-logo.png" data-reactid="765"></div></div></div></div><div id="s-ecommerce-shopping-cart-wrapper" class="s-ecommerce-shopping-cart-wrapper" data-reactid="766"></div><div id="s-new-mobile-actions-wrapper" data-reactid="767"><ul class="s-mobile-actions clearfix s-font-body" data-reactid="768"></ul></div></div></div></div></div> <div id="fb-root"></div> <div id="app-script-root"></div> <div id="app-view-root"></div> <script id="blog-collection-tmpl" type="text/html"> <div class='s-blog-col-head'></div> <div class='s-blog-col-body'> {{ _.each(blogPosts, function(blog) { }} <div class='s-blog-entry'> <div class='s-blog-entry-inner'> {{ if ($S && $S.conf && $S.conf.preview_mode) { }} <a class='s-blog-overlay-link' href='{{=blog.publicUrl}}'>&nbsp;</a> {{ } else { }} <a class='s-blog-overlay-link' href='{{=blog.relativeUrl}}'>&nbsp;</a> {{ } }} {{ if (blog.iconUrl) { }} <div class='s-blog-entry-left'> {{ if (UrlHelper.imageHasContent(blog.iconUrl)) { }} <div class='s-blog-avatar' style='background-image:url({{=blog.iconUrl}});'></div> {{ } else { }} <div class='s-blog-default-avatar'> <div class='entypo-bookmark'></div> </div> {{ } }} </div> {{ } }} <div class='s-blog-entry-right'> <div class='s-blog-details'> <div class='s-blog-details-head s-blog-row'> <div class='s-blog-title s-font-heading'> {{=blog.title}} </div> <div class='s-blog-date'> {{=blog.publishedAt}} </div> </div> {{ if (blogSettings.previewLayout == 1) { }} <div class='s-blog-details-blurb s-blog-row'> {{=blog.blurb}} </div> {{ } }} </div> </div> </div> </div> {{ }) }} {{ if (blogPosts.length == 0) { }} <div class='s-blog-entry'> <div class='s-common-status no-posts-error s-font-body'> There are no blog posts. </div> </div> {{ } }} </div> {{ if (blogPosts.length > 0) { }} <div class='s-blog-col-foot'> <a class='s-blog-link s-blog-next-link' href='javascript:void(0);'> &laquo; Newer </a> &nbsp; <ul class='s-blog-pagination' style='display:none;'> <li> <a class='s-blog-link s-blog-pagination-page' href='javascript:void(0);'></a> </li> </ul> &nbsp; <a class='s-blog-link s-blog-prev-link' href='javascript:void(0);'> Older &raquo; </a> </div> {{ } }} </script> <script src="./index_files/jquery.min.js.下載"></script> <script>
+  window.jQuery || document.write('<script src="https://assets.strikingly.com/assets/jquery-06f87436cbf6fb79f14121652d455a6e.js"><\/script>');
+</script> <script src="./index_files/i18n-f50d40b004557a00a42217d4d86843cd.js.下載"></script> <script src="./index_files/site-dll-b458c0a8a83619369d2d5f3fe82869db.js.下載"></script> <script src="./index_files/page-site-bundle-147bc6f98ac90976f4325d30fa09b749.js.下載"></script>   <!-- Powered by Strikingly.com 4 (1) Jan 17, 2017 at 02:27--></body></html>

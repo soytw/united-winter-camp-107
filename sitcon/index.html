@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>學生計算機年會 | Students' Information Technology Conference</title>
+
+  <meta name="description" content="以學生為本、由學生自發舉辦，SITCON 學生計算機年會不只是學生「學以致用、教學相長」的實際展現，更冀望所有對資訊有興趣的學生，能夠在年會裏齊聚一堂，彼此激盪、傳承、啟發。">
+
+  <meta property="og:title" content="學生計算機年會">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://sitcon.org/2016/">
+  <meta property="og:image" content="http://sitcon.org/2016/image/sitcon2016-snapshot.png">
+  <meta property="og:site_name" content="學生計算機年會">
+  <meta property="og:description" content="以學生為本、由學生自發舉辦，SITCON 學生計算機年會不只是學生「學以致用、教學相長」的實際展現，更冀望所有對資訊有興趣的學生，能夠在年會裏齊聚一堂，彼此激盪、傳承、啟發。">
+
+  <meta property="twitter:title" content="學生計算機年會">
+  <meta property="twitter:description" content="以學生為本、由學生自發舉辦，SITCON 學生計算機年會不只是學生「學以致用、教學相長」的實際展現，更冀望所有對資訊有興趣的學生，能夠在年會裏齊聚一堂，彼此激盪、傳承、啟發。">
+  <meta property="twitter:image:src" content="http://sitcon.org/2016/image/sitcon2016-snapshot.png">
+  <meta property="twitter:image:width" content="470">
+  <meta property="twitter:image:height" content="275">
+
+  <link href="favicon.ico" rel="shortcut icon">
+  <link href="favicon.ico" rel="icon">
+
+  <script src="http://openlayers.org/en/v3.12.1/build/ol.js" type="text/javascript"></script>
+  <link rel="stylesheet" href="http://openlayers.org/en/v3.12.1/css/ol.css" type="text/css">
+
+  <style type="text/css">
+    #loading-page {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #C2E9FF;
+      z-index: 1000;
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- DEBUG: live reload -->
+<!--  <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>-->
+
+  <div id="loading-page"></div>
+  <div id="fancybox">
+    <div id="fancybox-bg"></div>
+    <div id="fancybox-forward1"></div>
+    <div id="fancybox-forward2"></div>
+    <div id="fancybox-container">
+      <div class="xx"></div>
+      <div class="content"></div>
+    </div>
+  </div>
+
+  <div id="blur-area">
+
+    <div id="navbar">
+      <div class="nav">
+        <a id="link-home" href="#target-home">首頁</a>
+      </div>
+      <div class="nav">
+        <a id="link-schedule" href="#target-schedule">行程</a>
+      </div>
+      <div class="nav">
+        <a id="link-sponsor" href="#target-sponsor">贊助</a>
+      </div>
+      <div class="nav">
+        <a id="link-location" href="#target-location">聯絡我們</a>
+      </div>
+    </div>
+
+    <div id="h-controller">
+      <div id="target-home" class="targetor"></div>
+      <div id="target-schedule" class="targetor"></div>
+      <div id="target-sponsor" class="targetor"></div>
+      <div id="target-location" class="targetor"></div>
+
+      <div id="cover-fix">
+        <img id="image-sun" src="image/sun.png">
+
+        <img id="image-bird1" src="image/bird.png">
+        <img id="image-bird2" src="image/bird.png">
+        <img id="image-bird3" src="image/bird.png">
+
+      </div>
+      <div id="cover-cloud">
+        <img id="image-mountain" src="image/mountain.png">
+
+        <img src="image/cloud.png" class="cloud small" id="cloud1">
+        <img src="image/cloud.png" class="cloud small" id="cloud1_2">
+        <img src="image/cloud.png" class="cloud small opacity" id="cloud2">
+        <img src="image/cloud.png" class="cloud small opacity" id="cloud2_2">
+        <img src="image/cloud.png" class="cloud big" id="cloud3">
+        <img src="image/cloud.png" class="cloud big" id="cloud3_2">
+        <img src="image/cloud.png" class="cloud middle" id="cloud4">
+        <img src="image/cloud.png" class="cloud middle" id="cloud4_2">
+        <img src="image/cloud.png" class="cloud small" id="cloud5">
+        <img src="image/cloud.png" class="cloud small" id="cloud5_2">
+        <img src="image/cloud.png" class="cloud small" id="cloud6">
+        <img src="image/cloud.png" class="cloud small" id="cloud6_2">
+
+      </div>
+
+      <div id="x-controller">
+        <div id="page-home" class="page-container">
+          <div class="sky">
+            <div class="grass"></div>
+            <img class="image-grass image-grass1" src="image/grass.png">
+            <img class="image-grass image-grass2" src="image/grass.png">
+            <div id="image-group-leftground">
+              <img class="image-bridge" src="image/bridge.png">
+              <img id="image-tree3" class="image-tree" src="image/tree.png">
+              <img id="image-tree2" class="image-tree" src="image/tree.png">
+              <img id="image-tree1" class="image-tree" src="image/tree.png">
+            </div>
+            <img id="image-tree4" class="image-tree" src="image/tree.png">
+            <img id="image-tree6" class="image-tree" src="image/tree.png">
+            <img id="image-tree5" class="image-tree" src="image/tree.png">
+            <img id="image-tree7" class="image-tree" src="image/tree.png">
+
+            <div id="image-group-title">
+<!--
+              <img id="image-character-blue" src="image/character-blue.png">
+              <img id="image-character-red" src="image/character-red.png">
+-->
+              <img id="image-topic" src="image/banner.webp">
+              <p class="text-date">2016.1.23 - 25 就在 NCTU 國立交通大學</p>
+            </div>
+
+
+<!--
+            <div id="guide-index-arrow">
+              <p>關於本年會</p>
+              <img src="image/arrow.png">
+            </div>
+-->
+
+          </div>
+
+          <div class="page-content">
+            <article>
+              <!--簡介待補...-->
+              <h1 class="relative title">課程</h1>
+
+              <div id="event-iot" class="event-container">
+                <div class="col">
+                  <h2>IoT的實作與相關應用</h2>
+                  <h3>講師：嘉義高中 陳贊旭</h3>
+                </div>
+                <div class="col">
+                  <img src="image/courses/iot.webp">
+                </div>
+                <div>&nbsp;</div>
+              </div>
+              <div id="event-encryption" class="event-container">
+                <div class="col">
+                  <h2>密碼的意義</h2>
+                  <h3>講師：臺南女中 凃佩妤</h3>
+                </div>
+                <div class="col">
+                  <img src="image/courses/rsa.webp">
+                </div>
+                <div>&nbsp;</div>
+              </div>
+
+              <div id="event-3ddraw" class="event-container">
+                <div class="col">
+                  <h2>3D繪圖</h2>
+                  <h3>講師：臺大資工 涂家銘</h3>
+                </div>
+                <div class="col">
+                  <img src="image/courses/3ddraw.webp">
+                </div>
+                <div>&nbsp;</div>
+              </div>
+
+              <div id="event-web" class="event-container">
+                <div class="col">
+                  <h2>Web基礎相關知識與進階</h2>
+                  <h3>講師：新竹高中 蕭于傑</h3>
+                </div>
+                <div class="col">
+                  <img src="image/courses/web.jpg">
+                </div>
+                <div>&nbsp;</div>
+              </div>
+
+              <div id="event-security" class="event-container">
+                <div class="col">
+                  <h2>資訊安全</h2>
+                  <h3>講師：嘉義高中 楊志璿</h3>
+                </div>
+                <div class="col">
+                  <img src="image/courses/security.png">
+                </div>
+                <div>&nbsp;</div>
+              </div>
+
+              <div id="event-git" class="event-container">
+                <div class="col">
+                  <h2>GIT</h2>
+                  <h3>講師：新竹高中 蔡奇夆</h3>
+                </div>
+                <div class="col">
+                  <img src="image/courses/git.png">
+                </div>
+                <div>&nbsp;</div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div id="page-schedule" class="page-container">
+          <div class="sky">
+            <div class="grass"></div>
+            <img class="image-grass image-grass1" src="image/grass.png">
+            <img class="image-grass image-grass2" src="image/grass.png">
+            <img id="image-light-house" src="image/light-house.png">
+
+          </div>
+
+          <div class="page-upground">
+            <div id="group-events" style="text-align:center">
+<!--              <h1>課程</h1>-->
+<!--
+
+              <div class="col">
+                <div id="event-daily" class="event-container">
+                  <h2>資訊溝通與工程師的日常</h2>
+                  <h3>講師：</h3>
+                </div>
+              </div>
+-->
+
+<!--              <img height="400" src="image/schedule.webp">-->
+
+              <div class="clear"></div>
+<!--
+
+              <div id="event-iot-info" class="data-storage">
+                <div class="data-event">
+                  <h2>IoT的實作與相關應用</h2>
+                  <p>IoT的實作與相關應用...</p>
+                  <img class="bg-small-stone" src="image/courses/iot.webp">
+                </div>
+              </div>
+
+              <div id="event-salon-info" class="data-storage">
+                <div class="data-event">
+                  <h2>密碼學 (密碼的意義、RSA) </h2>
+                  <p>密碼學 (密碼的意義、RSA) ...</p>
+                  <img class="bg-small-stone" src="image/courses/rsa.webp">
+                </div>
+              </div>
+
+              <div id="event-unconference-info" class="data-storage">
+                <div class="data-event">
+                  <h2>3D繪圖</h2>
+                  <p>3D繪圖...</p>
+                  <img class="bg-small-stone" src="image/courses/3ddraw.webp">
+                </div>
+              </div>
+-->
+
+            </div>
+          </div>
+
+          <div class="page-content schedule-content">
+            <h1 class="title">時程表</h1>
+<!--
+            <div id="conf-map">
+              會場地圖
+              <img src="image/map1.png" class="icon">
+
+              <div class="data-storage">
+                <div class="conf-map">
+                  <h1>會場地圖</h1>
+                  <img class="conf-map" src="image/map.png">
+                </div>
+              </div>
+            </div>
+-->
+            <div id="conference-time">
+              <table class="conf-time-table">
+                <tbody>
+                  <tr>
+                    <th class="empty-slot"></th>
+                    <th>1/23</th>
+                    <th>1/24</th>
+                    <th>1/25</th>
+                  </tr>
+                  <tr>
+                    <td class="time">
+                      <p class="stime">08<small>00</small>
+                      </p>
+                    </td>
+                    <td colspan="1" rowspan="1"></td>
+                    <td colspan="1" rowspan="2" class="clickable confslot">課程2</td>
+                    <td colspan="1" rowspan="4">交大參訪</td>
+                  </tr>
+                  <tr>
+                    <td class="time">
+                      <p class="stime">09<small>00</small>
+                      </p>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td class="time">
+                      <p class="stime">10<small>00</small>
+                      </p>
+                    </td>
+                    <td colspan="1" rowspan="1"></td>
+                    <td colspan="1" rowspan="2" class="clickable confslot">課程3</td>
+                  </tr>
+                  <tr>
+                    <td class="time">
+                      <p class="stime">11<small>00</small>
+                      </p>
+                    </td>
+                    <td rowspan="1">會合</td>
+                  </tr>
+                  <tr>
+                    <td class="time">
+                      <p class="stime">12<small>00</small>
+                      </p>
+                    </td>
+                    <td colspan="3">
+                      吃飯，小隊時間
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td class="time">
+                      <p class="stime">13<small>00</small>
+                      </p>
+                      <p></p>
+                    </td>
+                    <td>大地遊戲</td>
+                    <td class="clickable confslot">課程4</td>
+                    <td rowspan="3">結業式</td>
+                  </tr>
+
+                  <tr>
+                    <td class="time">
+                      <p class="stime">15<small>00</small>
+                      </p>
+                      <p></p>
+                      <p></p>
+                    </td>
+                    <td class="clickable confslot">課程1</td>
+                    <td>解密遊戲</td>
+                  </tr>
+
+                  <tr>
+                    <td class="time">
+                      <p class="stime">18<small>00</small>
+                      </p>
+                      <p></p>
+                      <p></p>
+                    </td>
+                    <td rowspan="2">團隊對抗</td>
+                    <td rowspan="2">賭遊戲場</td>
+                  </tr>
+
+                  <tr>
+                    <td class="time">
+                      <p class="stime">21<small>00</small>
+                      </p>
+                      <p></p>
+                      <p></p>
+                    </td>
+                    <td>賦歸</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+          </div>
+        <div id="page-sponsor" class="page-container">
+          <div class="sky">
+            <div class="grass"></div>
+            <img class="image-grass image-grass1" src="image/grass.png">
+            <img class="image-grass image-grass2" src="image/grass.png">
+          </div>
+        </div>
+
+        <div id="page-location" class="page-container">
+          <div class="sky">
+            <div class="grass"></div>
+            <img class="image-grass image-grass1" src="image/grass.png">
+            <img class="image-grass image-grass2" src="image/grass.png">
+          </div>
+
+          <div class="page-upground">
+            <div id="emails">
+              <div class="col">
+                <a href="mailto:unitedwintertrip107@googlegroups.com">
+                  <img src="image/email-icon.png">
+                </a>
+                <p>聯絡信箱-1</p>
+                <small>unitedwintertrip107@googlegroups.com</small>
+              </div>
+              <div class="col">
+                <a href="mailto:contact@unitedwintercamp107.tech">
+                  <img src="image/email-icon2.png">
+                </a>
+                <p>聯絡信箱-2</p>
+                <small>unitedwintertrip107@googlegroups.com</small>
+              </div>
+            </div>
+          </div>
+
+          <div class="page-content">
+            <div id="staff">
+              <div class="col">
+                <a href="mailto:unitedwintertrip107@googlegroups.com">
+                  <img src="image/staffs/">
+                </a>
+                <p>總召 沈郁哲</p>
+                <small>0978-645-044</small>
+              </div>
+            </div>
+<!--
+            <article>
+              <h1 class="relative">
+                聯絡資訊：
+              </h1>
+              <ul>
+                <li>總召 沈郁哲
+                <li>0978-645-044
+                <br>
+                <li>副召 吳巧心
+                <li>0978-825-613
+                <br>
+
+                <li>副召 陳育靜
+                <li>0935-890-524
+                <br>
+
+                <li>副召 魏鳴億
+                <li>0928-452-817
+                <br>
+
+                <li>聯絡信箱-1
+                <li>unitedwintertrip107@googlegroups.com
+                <br>
+
+                <li>聯絡信箱-2
+                <li>contact@unitedwintercamp107.tech
+              </ul>
+            </article>
+-->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer">
+      <div id="footer-sponsor">
+        <h1>共同主辦</h1>
+        <div class="row">
+          <div class="sponsor col-left">
+            <a class="logo" href="https://zh-tw.facebook.com/WLCSC/" target="_blank">
+              <img src="image/logos/wlcsc.jpg">
+            </a>
+            <p class="title">武陵高中資訊研究社</p>
+            <p class="title">WLCSC</p>
+            <br>
+          </div>
+
+          <div class="sponsor col-left">
+            <a class="logo" href="http://blog.csdc.tw/" target="_blank">
+              <img src="image/logos/csdc.png">
+            </a>
+            <p class="title">新竹高中軟體研究社</p>
+            <p class="title">CSDC</p>
+            <br>
+          </div>
+
+          <div class="sponsor col-left">
+            <a class="logo" href="http://cs.cysh.cy.edu.tw/" target="_blank">
+              <img src="image/logos/cycc.jpg">
+            </a>
+            <p class="title">嘉義高中電腦社</p>
+            <p class="title">CYCC</p>
+            <br>
+          </div>
+
+          <div class="sponsor col-left">
+            <a class="logo" href="https://www.facebook.com/CYGSH.PRC/" target="_blank">
+              <img src="image/logos/cygprc.jpg">
+            </a>
+            <p class="title">嘉義女中程式研究社</p>
+            <p class="title">CYGPRC</p>
+            <br>
+          </div>
+
+          <div class="sponsor col-left">
+            <a class="logo" href="https://zh-tw.facebook.com/HKHSprogrammingDesignClub/" target="_blank">
+              <img src="image/logos/hkhs2.png">
+            </a>
+            <p class="title">興國高中研究特殊機器人應用社</p>
+            <p class="title">RLC</p>
+            <br>
+          </div>
+
+          <div class="sponsor col-left">
+            <a class="logo" href="https://www.facebook.com/tnsciss" target="_blank">
+              <img src="image/logos/tnssh.png">
+            </a>
+            <p class="title">臺南二中資訊研究社</p>
+            <p class="title">CISS</p>
+            <br>
+          </div>
+
+          <div class="sponsor col-left">
+            <a class="logo" href="http://www.tfcis.org" target="_blank">
+              <img src="image/logos/tfcis.png">
+            </a>
+            <p class="title">臺南一中資訊社</p>
+            <p class="title">TFcis</p>
+            <br>
+          </div>
+
+          <div class="sponsor col-left">
+            <a class="logo" href="https://zh-tw.facebook.com/tngsirc/" target="_blank">
+              <img src="image/logos/tngs.png">
+            </a>
+            <p class="title">臺南女中資訊研究社</p>
+            <p class="title">TGIRC</p>
+            <br>
+          </div>
+
+          <div class="sponsor col-left">
+            <a class="logo" href="https://www.facebook.com/CCIRS.1st/" target="_blank">
+              <img src="image/logos/ccirs.png">
+            </a>
+            <p class="title">家齊高中資訊研究社</p>
+            <p class="title">CCIRS</p>
+            <br>
+          </div>
+
+          <div class="sponsor col-left">
+            <a class="logo" href="https://zh-tw.facebook.com/i2trc2/" target="_blank">
+              <img src="image/logos/kghs.gif">
+            </a>
+            <p class="title">高雄女中資訊社</p>
+            <p class="title">I<sup>2</sup>TRC<sup>2</sup></p>
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <link rel="stylesheet" type="text/css" href="sitcon2016.css">
+  <script type="text/javascript" src="sitcon2016.js"></script>
+</body>
+
+</html>
